@@ -1,0 +1,66 @@
+main {
+    background-color: yellowgreen;
+}
+
+main>h2 {
+    color: white;
+    padding: 0 10px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.block-cards {
+    display: grid;
+    grid-template: 250px / repeat(7, 1fr);
+}
+
+[class^="cards"] {
+    display: grid;
+    justify-content: center;
+    border: 2px solid rgb(16, 16, 16);
+    background-color: rgba(255, 255, 255, 0.689);
+    color: blue;
+    text-align: center;
+}
+
+[class^="cards"]>img {
+    height: 80px;
+    width: 80px;
+}
+
+.degrees-celsius {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.degrees-max {
+    justify-self: end;
+}
+
+.month {
+    text-align: center;
+}
+
+.spring {
+    background-image: url('../assets/spring.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.summer {
+    background-image: url('../assets/summer.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.autumn {
+    background-image: url('../assets/autumn.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.winter {
+    background-image: url('../assets/winter.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
