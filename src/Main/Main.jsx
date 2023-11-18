@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Main.css';
+import Table from '../Table/Table';
 import { date } from '../utils/date'
 import cloudsRain from '../icons/clouds-rain.png'
 import clouds from '../icons/clouds.png';
@@ -33,38 +34,68 @@ export const Main = () => {
                 <div className="cards1">
                     <h3>Monday</h3>
                     <img src={clouds} alt="Image weather" />
-                    <div className='temperature'></div>
-                    <div className='month'></div>
+                    <div className='temperature'>
+                        <div className="degrees-celsius">
+                            <div className="degrees-min">Min<br /> <span>10</span><sup>&deg;</sup></div>
+                            <div className="degrees-max">Max<br /> <span>10</span><sup>&deg;</sup></div>
+                        </div>
+                    </div>
+                    <div className='month'>{date.month}</div>
                 </div>
                 <div className="cards2">
                     <h3>Tuesday</h3>
                     <img src={cloudsRain} alt="Image weather" />
-                    <div className='temperature'></div>
-                    <div className='month'></div>
+                    <div className='temperature'>
+                        <div className="degrees-celsius">
+                            <div className="degrees-min">Min<br /> <span>10</span><sup>&deg;</sup></div>
+                            <div className="degrees-max">Max<br /> <span>10</span><sup>&deg;</sup></div>
+                        </div>
+                    </div>
+                    <div className='month'>{date.month}</div>
                 </div>
                 <div className="cards3">
                     <h3>wednesday</h3>
                     <img src={clouds} alt="Image weather" />
-                    <div className='temperature'></div>
-                    <div className='month'></div>
+                    <div className='temperature'>
+                        <div className="degrees-celsius">
+                            <div className="degrees-min">Min<br /> <span>10</span><sup>&deg;</sup></div>
+                            <div className="degrees-max">Max<br /> <span>10</span><sup>&deg;</sup></div>
+                        </div>
+                    </div>
+                    <div className='month'>{date.month}</div>
                 </div>
                 <div className="cards4">
                     <h3>Thursday</h3>
                     <img src={sunnyClouds} alt="Image weather" />
-                    <div className='temperature'></div>
-                    <div className='month'></div>
+                    <div className='temperature'>
+                        <div className="degrees-celsius">
+                            <div className="degrees-min">Min<br /> <span>10</span><sup>&deg;</sup></div>
+                            <div className="degrees-max">Max<br /> <span>10</span><sup>&deg;</sup></div>
+                        </div>
+                    </div>
+                    <div className='month'>{date.month}</div>
                 </div>
                 <div className="cards5">
                     <h3>Friday</h3>
                     <img src={sunny} alt="Image weather" />
-                    <div className='temperature'></div>
-                    <div className='month'></div>
+                    <div className='temperature'>
+                        <div className="degrees-celsius">
+                            <div className="degrees-min">Min<br /> <span>10</span><sup>&deg;</sup></div>
+                            <div className="degrees-max">Max<br /> <span>10</span><sup>&deg;</sup></div>
+                        </div>
+                    </div>
+                    <div className='month'>{date.month}</div>
                 </div>
                 <div className="cards6">
                     <h3>Saturday</h3>
                     <img src={clouds} alt="Image weather" />
-                    <div className='temperature'></div>
-                    <div className='month'></div>
+                    <div className='temperature'>
+                        <div className="degrees-celsius">
+                            <div className="degrees-min">Min<br /> <span>10</span><sup>&deg;</sup></div>
+                            <div className="degrees-max">Max<br /> <span>10</span><sup>&deg;</sup></div>
+                        </div>
+                    </div>
+                    <div className='month'>{date.month}</div>
                 </div>
                 <div className="cards7">
                     <h3>Sunday</h3>
@@ -78,6 +109,9 @@ export const Main = () => {
                     </div>
                     <div className='month'>{date.month}</div>
                 </div>
+            </div>
+            <div className="weather-info-block">
+                < Table />
             </div>
         </main>
     )
