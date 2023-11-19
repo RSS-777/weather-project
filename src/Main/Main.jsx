@@ -15,7 +15,17 @@ import thermometerCold from '../icons/thermometer-cold.png';
 import thermometerHot from '../icons/thermometer-hot.png';
 import wind from '../icons/wind.png';
 import wind2 from '../icons/wind2.png';
+import weatherData from '../utils/weather-api'
 
+async function fetchData() {
+    try{
+      const data = await weatherData()
+      console.log(data)
+    }catch(error){
+        console.log('Error get data', error)
+    }
+}
+fetchData()
 
 export const Main = () => {
     const [stateSeason, setStateSeason] = useState('');
@@ -25,7 +35,6 @@ export const Main = () => {
         if (date.season === 'summer') { setStateSeason('summer') }
         if (date.season === 'autumn') { setStateSeason('autumn') }
     }, [])
-
 
     return (
         <main className={stateSeason}>
