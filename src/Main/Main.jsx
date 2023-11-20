@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Main.css';
-import Table from '../Table/Table';
+import weatherData from '../utils/weather-api';
 import { date } from '../utils/date'
 import cloudsRain from '../icons/clouds-rain.png'
 import clouds from '../icons/clouds.png';
@@ -15,17 +15,6 @@ import thermometerCold from '../icons/thermometer-cold.png';
 import thermometerHot from '../icons/thermometer-hot.png';
 import wind from '../icons/wind.png';
 import wind2 from '../icons/wind2.png';
-import weatherData from '../utils/weather-api'
-
-async function fetchData() {
-    try{
-      const data = await weatherData()
-      console.log(data)
-    }catch(error){
-        console.log('Error get data', error)
-    }
-}
-fetchData()
 
 export const Main = () => {
     const [stateSeason, setStateSeason] = useState('');
@@ -120,7 +109,8 @@ export const Main = () => {
                 </div>
             </div>
             <div className="weather-info-block">
-                < Table />
+
+                 <h4>Hello</h4>
             </div>
         </main>
     )

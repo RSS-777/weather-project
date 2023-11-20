@@ -15,7 +15,7 @@ export const Header = () => {
     return (
         <header>
             <h1>Weather</h1>
-            <h5>{nameCity}</h5>
+            <h5>{}</h5>
 
             
             <input
