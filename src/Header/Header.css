@@ -1,3 +1,37 @@
 header{
     background-color: aqua;
 }
+h1{
+    color: blue;
+    text-shadow: 1px 1px 3px rgb(233, 211, 211);
+    padding-left: 20px;
+    font-size: 50px;
+}
+
+.block-cityNameInput{
+    text-align: center;;
+
+}
+.block-cityNameInput>input{
+    font-size: 30px;
+    background-color: rgb(232, 217, 206);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 1px rgb(215, 125, 125);
+    padding-left: 10px;
+    
+}
+.block-cityNameInput>button{
+    font-size: 30px;
+    margin-left: 5px;
+    background-color: rgb(232, 217, 206);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 1px rgb(215, 125, 125);
+}
+
+.placeLocationInfo{
+    text-shadow: 1px 1px 3px black;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}

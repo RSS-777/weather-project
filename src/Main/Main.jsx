@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './Main.css';
-import weatherData from '../utils/weather-api';
 import { date } from '../utils/date'
 import cloudsRain from '../icons/clouds-rain.png'
 import clouds from '../icons/clouds.png';
@@ -16,7 +15,7 @@ import thermometerHot from '../icons/thermometer-hot.png';
 import wind from '../icons/wind.png';
 import wind2 from '../icons/wind2.png';
 
-export const Main = () => {
+export const Main = (props) => {
     const [stateSeason, setStateSeason] = useState('');
     useEffect(() => {
         if (date.season === 'winter') { setStateSeason('winter') }
@@ -24,6 +23,17 @@ export const Main = () => {
         if (date.season === 'summer') { setStateSeason('summer') }
         if (date.season === 'autumn') { setStateSeason('autumn') }
     }, [])
+
+    const temp = props.weatherApi?.current?.temp_c || '';
+    const feelslike = props.weatherApi?.current?.feelslike_c || '';
+    const humidity = props.weatherApi?.current?.humidity || '';
+    const is_day = props.weatherApi?.current?.is_day || '';
+    const precip_in = props.weatherApi?.current?.precip_in || '';
+    const pressure_in = props.weatherApi?.current?.pressure_in || '';
+    const vis_km = props.weatherApi?.current?.vis_km || '';
+    const wind_degree = props.weatherApi?.current?.wind_degree || '';
+    const wind_dir = props.weatherApi?.current?.wind_dir || '';
+    const wind_kph = props.weatherApi?.current?.wind_kph || '';
 
     return (
         <main className={stateSeason}>
@@ -34,7 +44,7 @@ export const Main = () => {
                     <img src={clouds} alt="Image weather" />
                     <div className='temperature'>
                         <div className="degrees-celsius">
-                            <div className="degrees-min">Min<br /> <span>10</span><sup>&deg;</sup></div>
+                            <div className="degrees-min">Min<br /> <span>{temp}</span><sup>&deg;</sup></div>
                             <div className="degrees-max">Max<br /> <span>10</span><sup>&deg;</sup></div>
                         </div>
                     </div>
@@ -45,7 +55,7 @@ export const Main = () => {
                     <img src={cloudsRain} alt="Image weather" />
                     <div className='temperature'>
                         <div className="degrees-celsius">
-                            <div className="degrees-min">Min<br /> <span>10</span><sup>&deg;</sup></div>
+                            <div className="degrees-min">Min<br /> <span>{8}</span><sup>&deg;</sup></div>
                             <div className="degrees-max">Max<br /> <span>10</span><sup>&deg;</sup></div>
                         </div>
                     </div>
@@ -109,8 +119,15 @@ export const Main = () => {
                 </div>
             </div>
             <div className="weather-info-block">
-
-                 <h4>Hello</h4>
+                швидкість вітру: {wind_kph}<br />
+                напрямок вітру за компасом: {wind_dir}<br />
+                напрямок вітру в градусах: {wind_degree}<br />
+                видимість {vis_km}<br />
+                атмосферний тиск: {pressure_in}<br />
+                кількість опадів: {precip_in}<br />
+                день чи ніч: {is_day === 0? 'Day': 'Hight'}<br />
+                вологість повітря у відсотках: {humidity}<br />
+                відчутність тепла: {feelslike}
             </div>
         </main>
     )
