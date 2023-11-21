@@ -15,6 +15,14 @@ function App() {
   const dataServer = urlImg?.forecast?.forecastday[1]?.date_epoch;
   console.log('This 2:', new Date(dataServer * 1000))
 
+  const dataServer2 = urlImg?.forecast?.forecastday[1]?.date_epoch;
+  console.log('This 3:', new Date(dataServer * 1000).getDate())
+
+const dataServer3 = urlImg?.forecast?.forecastday[1]?.date_epoch;
+  console.log('This 4:', new Date(dataServer * 1000).getDay())
+
+const dataServer4 = urlImg?.forecast?.forecastday[1]?.date_epoch;
+  console.log('This 5:', new Date(dataServer * 1000).getHours())
 
 
 
@@ -27,7 +35,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const weatherApi = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=52d9f961032045a097064443231911&q=${nameCity}&days=5&lang=ru`)
+        const weatherApi = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=52d9f961032045a097064443231911&q=${nameCity}&days=5&lang=uk`)
         const resp = await weatherApi.json()
         setDataApi(resp)
       } catch (error) {
