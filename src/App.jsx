@@ -8,8 +8,16 @@ import './App.css'
 
 function App() {
   const [dataApi, setDataApi] = useState({})
-  const [nameCity, setNameCity] = useState('');
+  const [nameCity, setNameCity] = useState('kyiv');
+  const [urlImg, setUrlImg] = useState(null);
   console.log(dataApi)
+
+  const dataServer = urlImg?.forecast?.forecastday[1]?.date_epoch;
+  console.log('This 2:', new Date(dataServer * 1000))
+
+
+
+
 
   const getCityName = dataApi?.location?.name || 'Location or name is not available';
   const getCountry = dataApi?.location?.country || '';
@@ -19,16 +27,27 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const weatherApi = await fetch(`http://api.weatherapi.com/v1/current.json?key=52d9f961032045a097064443231911&q=${nameCity}`)
+        const weatherApi = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=52d9f961032045a097064443231911&q=${nameCity}&days=5&lang=ru`)
         const resp = await weatherApi.json()
         setDataApi(resp)
       } catch (error) {
-        setDataApi(null)
-        setNameCity('There is no such city')
         console.log('Error fetching data:', error)
       }
     }
     fetchData()
+  }, [nameCity])
+
+  useEffect(() => {
+    async function fetchImage() {
+      try {
+        const weatherApi = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=52d9f961032045a097064443231911&q=${nameCity}&days=5`);
+        const resp = await weatherApi.json();
+        setUrlImg(resp)
+      } catch (error) {
+        console.log('Error fetching image:', error)
+      }
+    }
+    fetchImage()
   }, [nameCity])
 
   const handlerCityChange = (sity) => {
@@ -38,11 +57,11 @@ function App() {
   return (
     <div className="wrapper">
       < Header
-       onCityChange={handlerCityChange}
+        onCityChange={handlerCityChange}
         nameCity={getCityName}
         country={getCountry}
         region={getRegion}
-         />
+      />
       <div className="main-container">
         < Main weatherApi={dataApi} />
         < Aside />

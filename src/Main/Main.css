@@ -11,7 +11,7 @@ main>h2 {
 
 .block-cards {
     display: grid;
-    grid-template: 250px / repeat(7, 1fr);
+    grid-template: 250px / repeat(5, 1fr);
 }
 
 [class^="cards"] {

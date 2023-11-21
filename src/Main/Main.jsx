@@ -25,6 +25,8 @@ export const Main = (props) => {
     }, [])
 
     const temp = props.weatherApi?.current?.temp_c || '';
+    const tempMin = props.weatherApi?.forecast?.forecastday[0].day.mintemp_c || '';
+    const tempMax = props.weatherApi?.forecast?.forecastday[0].day.maxtemp_c || '';
     const feelslike = props.weatherApi?.current?.feelslike_c || '';
     const humidity = props.weatherApi?.current?.humidity || '';
     const is_day = props.weatherApi?.current?.is_day || '';
@@ -34,14 +36,16 @@ export const Main = (props) => {
     const wind_degree = props.weatherApi?.current?.wind_degree || '';
     const wind_dir = props.weatherApi?.current?.wind_dir || '';
     const wind_kph = props.weatherApi?.current?.wind_kph || '';
+    const iconUrl = props.weatherApi?.current?.condition.icon || '';
+    const text = props.weatherApi?.current?.condition.text || '';
 
     return (
         <main className={stateSeason}>
             <h2>{date.season}</h2>
             <div className="block-cards">
                 <div className="cards1">
-                    <h3>Monday</h3>
-                    <img src={clouds} alt="Image weather" />
+                    <h3>{date.nameWeek} <br /> {date.day}</h3>
+                    <img src={iconUrl} alt="Image weather" />
                     <div className='temperature'>
                         <div className="degrees-celsius">
                             <div className="degrees-min">Min<br /> <span>{temp}</span><sup>&deg;</sup></div>
@@ -50,7 +54,7 @@ export const Main = (props) => {
                     </div>
                     <div className='month'>{date.month}</div>
                 </div>
-                <div className="cards2">
+                {/* <div className="cards2">
                     <h3>Tuesday</h3>
                     <img src={cloudsRain} alt="Image weather" />
                     <div className='temperature'>
@@ -116,7 +120,7 @@ export const Main = (props) => {
                         </div>
                     </div>
                     <div className='month'>{date.month}</div>
-                </div>
+                </div> */}
             </div>
             <div className="weather-info-block">
                 швидкість вітру: {wind_kph}<br />
@@ -125,9 +129,13 @@ export const Main = (props) => {
                 видимість {vis_km}<br />
                 атмосферний тиск: {pressure_in}<br />
                 кількість опадів: {precip_in}<br />
-                день чи ніч: {is_day === 0? 'Day': 'Hight'}<br />
+                день чи ніч: {is_day === 0 ? 'Day' : 'Hight'}<br />
                 вологість повітря у відсотках: {humidity}<br />
-                відчутність тепла: {feelslike}
+                відчутність тепла: {feelslike}<br />
+                похмуро чи ясно : {text}<br />
+                mintemp: {tempMin}<br />
+                maxtemp: {tempMax}<br />
+                <img src={iconUrl} alt="icon" />
             </div>
         </main>
     )
