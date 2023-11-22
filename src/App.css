@@ -2,8 +2,6 @@
     display: grid;
     grid-template: 165px 1fr 70px / 1fr;
     height: 100vh;
-    background-color: aquamarine;
-
 }
 
 .main-container {
