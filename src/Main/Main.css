@@ -12,14 +12,16 @@ main>h2 {
 .block-cards {
     display: grid;
     grid-template: 250px / repeat(5, 1fr);
+    gap:10px;
+    padding: 10px;
 }
 
 [class^="cards"] {
     display: grid;
     justify-content: center;
-    border: 2px solid rgb(16, 16, 16);
-    background-color: rgba(255, 255, 255, 0.689);
-    color: blue;
+    background-color: rgba(2, 2, 2, 0.573);
+    box-shadow: 0 0 3px 1px white;
+    color: rgb(255, 191, 0);
     text-align: center;
 }
 

@@ -12,7 +12,6 @@ export const Main = (props) => {
     const [stateSeason, setStateSeason] = useState('');
     useEffect(() => {
          setStateSeason(date.season) 
-
     }, [])
 
     const temp = props.weatherApi?.current?.temp_c || '';
@@ -30,7 +29,7 @@ export const Main = (props) => {
     const iconUrl = props.weatherApi?.current?.condition.icon || '';
     const text = props.weatherApi?.current?.condition.text || '';
     const dateToDay = new Date(props?.weatherApi?.forecast?.forecastday[0]?.date_epoch   * 1000).getDate()
-
+    const weekDay = new Date(props?.weatherApi?.forecast?.forecastday[0]?.date_epoch   * 1000).getDay()
 
 
 
@@ -57,7 +56,9 @@ export const Main = (props) => {
                 похмуро чи ясно : {text}<br />
                 mintemp: {tempMin}<br />
                 maxtemp: {tempMax}<br />
+                поточна температура: {temp}
                 дата сьогодні: {dateToDay}<br />
+                День тижня: {weekDay} < br />
                 <img src={iconUrl} alt="icon" />
             </div>
         </main>

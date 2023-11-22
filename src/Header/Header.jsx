@@ -13,18 +13,21 @@ export const Header = (props) => {
     }
     return (
         <header>
-            <h1>Weather</h1>
-            <div className='block-cityNameInput'>
-                <input
-                    type="text"
-                    id="cityInput"
-                    placeholder='Enter the name of the city'
-                    value={inputValue}
-                    onChange={handleInputChange}
-                />
-                <button onClick={handlerButtonClick}>Show</button>
+            <h1>погода</h1>
+            <div className='container-cityNameInput'>
+                <div className='block-cityNameInput'>
+                    <input
+                        type="text"
+                        id="cityInput"
+                        placeholder='Введіть назву міста'
+                        value={inputValue}
+                        onChange={handleInputChange}
+                    />
+                    <button onClick={handlerButtonClick}>Пошук</button>
+                </div>
+                <h3 className='placeLocationInfo'>{props.country} {props.region} {props.nameCity}</h3>
             </div>
-            <h3 className='placeLocationInfo'>{props.country} {props.region} {props.nameCity}</h3>
+
         </header>
     )
 }
