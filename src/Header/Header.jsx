@@ -8,7 +8,9 @@ export const Header = (props) => {
         setInputValue(event.target.value);
     }
     const handlerButtonClick = () => {
-        props.onCityChange(inputValue);
+        if(inputValue !== ''){
+           props.onCityChange(inputValue); 
+        }
         setInputValue('')
     }
     return (

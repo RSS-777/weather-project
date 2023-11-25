@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Header } from './Header/Header';
-import { Main } from './Main/Main';
+import { WeatherBlock } from './WeatherBlock/WeatherBlock';
 import { Footer } from './Footer/Footer';
 import { Aside } from './Aside/Aside';
 import './App.css'
@@ -23,7 +23,7 @@ function App() {
       try {
         const weatherApi = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=52d9f961032045a097064443231911&q=${nameCity}&days=5&lang=uk`)
         const resp = await weatherApi.json()
-        setDataApi(resp)
+          setDataApi(resp)
       } catch (error) {
         console.log('Error fetching data:', error)
       }
@@ -45,7 +45,7 @@ function App() {
         region={getRegion}
       />
       <div className="main-container">
-        < Main weatherApi={dataApi} />
+        < WeatherBlock weatherApi={dataApi} />
         < Aside />
       </div>
       < Footer />

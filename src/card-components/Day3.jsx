@@ -1,8 +1,8 @@
 const Day3 = (props) => {
     const tempMin = props.weatherApi?.forecast?.forecastday[2].day.mintemp_c || '';
     const tempMax = props.weatherApi?.forecast?.forecastday[2].day.maxtemp_c || '';
-    const iconUrl = props.weatherApi?.forecast?.forecastday[2].day.condition.icon;
-    const dateToDay = new Date(props?.weatherApi?.forecast?.forecastday[2]?.date_epoch * 1000).getDate()
+    const iconUrl = props.weatherApi?.forecast?.forecastday[2].day.condition.icon || 'https://i.gifer.com/VAyR.gif';
+    const dateToDay = new Date(props?.weatherApi?.forecast?.forecastday[2]?.date_epoch * 1000).getDate() || '';
     const numberWeek = new Date(props?.weatherApi?.forecast?.forecastday[2]?.date_epoch * 1000).getDay()
     const numberMonth = new Date(props?.weatherApi?.forecast?.forecastday[2]?.date_epoch * 1000).getMonth()
 
@@ -14,7 +14,7 @@ const Day3 = (props) => {
 
     return (
         <div className="cards3">
-            <h3>{nameWeek} <br /> {dateToDay}</h3>
+            <h3 className="day-week">{nameWeek} <br /> {dateToDay}</h3>
             <img src={iconUrl} alt="Image weather" />
             <div className='temperature'>
                 <div className="degrees-celsius">

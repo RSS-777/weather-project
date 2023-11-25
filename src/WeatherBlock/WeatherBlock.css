@@ -19,20 +19,43 @@ main>h2 {
 [class^="cards"] {
     display: grid;
     justify-content: center;
-    background-color: rgba(2, 2, 2, 0.573);
+    background-color: rgba(2, 2, 2, 0.712);
     box-shadow: 0 0 3px 1px white;
     color: rgb(255, 191, 0);
     text-align: center;
 }
 
+.day-week{
+  margin-top: 7px;
+}
+
 [class^="cards"]>img {
     height: 80px;
     width: 80px;
+    justify-self: center;
+    padding-top: 3px;
+    margin-top: -40px;
+}
+
+.cards1{
+  position: relative;
+}
+
+.temp{
+   position: absolute;
+   font-size: 24px;
+   top: 55%;
+   width: 100%;
+   color: white;
 }
 
 .degrees-celsius {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(10px, 60px) minmax(10px, 60px);
+    line-height: 12px;
+    font-size: 14px;
+    margin-bottom: -25px;
+    padding-right: 10px;
 }
 
 .degrees-max {
@@ -42,6 +65,8 @@ main>h2 {
 .month {
     text-align: center;
     font-size: 20px;
+    height: 20px;
+    margin-bottom: -30px;
 }
 
 .spring {
@@ -58,6 +83,7 @@ main>h2 {
 
 .autumn {
     background-image: url('../assets/autumn.jpg');
+
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -69,6 +95,17 @@ main>h2 {
 }
 
 .weather-info-block{
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.689);
+    margin: 0 10px 10px 10px;
+    padding: 10px;
+    padding-bottom: 10px;
+    color: white;
+    background-color: rgba(2, 2, 2, 0.712);
+}
+
+.today{
+    color: red;
+    font-size:10px;
+    padding: 0 3px;
+    position: absolute;
+    background-color: white;
 }
