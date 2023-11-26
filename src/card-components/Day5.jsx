@@ -1,10 +1,14 @@
-const Day5 = (props) => {
-    const tempMin = props.weatherApi?.forecast?.forecastday[4].day.mintemp_c || '';
-    const tempMax = props.weatherApi?.forecast?.forecastday[4].day.maxtemp_c || '';
-    const iconUrl = props.weatherApi?.forecast?.forecastday[4].day.condition.icon || 'https://i.gifer.com/VAyR.gif';
-    const dateToDay = new Date(props?.weatherApi?.forecast?.forecastday[4]?.date_epoch * 1000).getDate() || '';
-    const numberWeek = new Date(props?.weatherApi?.forecast?.forecastday[4]?.date_epoch * 1000).getDay();
-    const numberMonth = new Date(props?.weatherApi?.forecast?.forecastday[0]?.date_epoch * 1000).getMonth();
+import { useContext } from 'react';
+import { WeatherContext } from '../context/weatherContext';
+
+const Day5 = () => {
+    const { data } = useContext(WeatherContext)
+    const tempMin = data?.forecast?.forecastday[4].day.mintemp_c || '';
+    const tempMax = data?.forecast?.forecastday[4].day.maxtemp_c || '';
+    const iconUrl = data?.forecast?.forecastday[4].day.condition.icon || 'https://i.gifer.com/VAyR.gif';
+    const dateToDay = new Date(data?.forecast?.forecastday[4]?.date_epoch * 1000).getDate() || '';
+    const numberWeek = new Date(data?.forecast?.forecastday[4]?.date_epoch * 1000).getDay();
+    const numberMonth = new Date(data?.forecast?.forecastday[0]?.date_epoch * 1000).getMonth();
 
     const monthName = ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"];
     const month = monthName[numberMonth]

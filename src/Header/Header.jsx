@@ -1,18 +1,28 @@
 import './Header.css';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
-export const Header = (props) => {
+import { WeatherContext} from '../context/weatherContext';
+
+
+export const Header = () => {
     const [inputValue, setInputValue] = useState('');
+    const {data, setNameCity} = useContext(WeatherContext)
+    console.log('Header',data)
+    
+    const nameCity = data?.location?.name || 'Location or name is not available';
+    const country = data?.location?.country || '';
+    const region = data?.location?.region || '';
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
     }
     const handlerButtonClick = () => {
         if(inputValue !== ''){
-           props.onCityChange(inputValue); 
+           setNameCity(inputValue)
         }
         setInputValue('')
     }
+
     return (
         <header>
             <h1>погода</h1>
@@ -27,7 +37,7 @@ export const Header = (props) => {
                     />
                     <button onClick={handlerButtonClick}>Пошук</button>
                 </div>
-                <h3 className='placeLocationInfo'>{props.country} {props.region} {props.nameCity}</h3>
+                <h3 className='placeLocationInfo'>{country} {region} {nameCity}</h3>
             </div>
 
         </header>
