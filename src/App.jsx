@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React from 'react'
 import { Header } from './Header/Header';
 import { WeatherBlock } from './WeatherBlock/WeatherBlock';
 import { Footer } from './Footer/Footer';

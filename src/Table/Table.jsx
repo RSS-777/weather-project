@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import './Table.css';
-import { useFetchWeather } from '../hook/useFetchWeather'
+import { WeatherContext } from '../context/weatherContext';
 
 const Table = () => {
-    const { data } = useFetchWeather()
-    // console.log('Table:', data)
+    const { data } = useContext(WeatherContext)
 
     if (!data || !data.forecast || !data.forecast.forecastday || !data.forecast.forecastday[0].hour) {
         return <p>Loading...</p>
@@ -24,11 +23,6 @@ const Table = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Видалити Дата</td>
-                <td>{dayData.date}</td>
-                <td>{locationName}</td>
-                </tr>
                 <tr>
                     <td>Хмарність</td>
                     {hours.map((hour, index) => {

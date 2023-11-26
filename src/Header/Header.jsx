@@ -1,14 +1,11 @@
 import './Header.css';
 import React, { useState, useContext } from 'react';
-
 import { WeatherContext} from '../context/weatherContext';
-
 
 export const Header = () => {
     const [inputValue, setInputValue] = useState('');
     const {data, setNameCity} = useContext(WeatherContext)
-    console.log('Header',data)
-    
+
     const nameCity = data?.location?.name || 'Location or name is not available';
     const country = data?.location?.country || '';
     const region = data?.location?.region || '';
