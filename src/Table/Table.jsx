@@ -8,7 +8,7 @@ const Table = () => {
     if (!data || !data.forecast || !data.forecast.forecastday || !data.forecast.forecastday[0].hour) {
         return <p>Loading...</p>
     }
-    const locationName = data.location.name
+   
     const dayData = data.forecast.forecastday[0];
     const hours = ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00'];
 
