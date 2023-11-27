@@ -6,7 +6,7 @@ export const Header = () => {
     const [inputValue, setInputValue] = useState('');
     const {data, setNameCity} = useContext(WeatherContext)
 
-    const nameCity = data?.location?.name || 'Location or name is not available';
+    const nameCity = data?.location?.name || 'Місцезнаходження чи назва недоступні';
     const country = data?.location?.country || '';
     const region = data?.location?.region || '';
 

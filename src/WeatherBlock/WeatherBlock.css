@@ -19,6 +19,7 @@ main>h2 {
 [class^="cards"] {
     display: grid;
     justify-content: center;
+    height: 280px;
     background-color: rgba(2, 2, 2, 0.712);
     box-shadow: 0 0 3px 1px white;
     color: rgb(255, 191, 0);
