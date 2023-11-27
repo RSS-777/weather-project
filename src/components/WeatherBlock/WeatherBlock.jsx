@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { WeatherContext } from '../context/weatherContext';
-import './WeatherBlock.css';
+import { WeatherContext } from '../../context/weatherContext';
 import WeatherTable from '../WeatherTable/WeatherTable';
-import { date } from '../utils/date';
+import { date } from '../../utils/date';
+import './WeatherBlock.css';
 
 export const WeatherBlock = () => {
     const { data } = useContext(WeatherContext);
@@ -43,7 +43,6 @@ export const WeatherBlock = () => {
                 </div>
             </main>
         )
-
     }
 
     const forecastDays = data.forecast.forecastday.slice(0, changeNumberDays);

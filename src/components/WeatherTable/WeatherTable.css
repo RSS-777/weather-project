@@ -1,0 +1,20 @@
+table {
+    border-collapse: collapse; 
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid rgb(215, 125, 125); 
+    padding: 8px; 
+    text-align: left; 
+  }
+  
+  th {
+    background-color: rgb(232, 217, 206);
+    box-shadow: 2px 2px 5px 1px rgb(215, 125, 125);
+    color: black;
+  }
+
+  .title-table{
+    color: rgb(255, 191, 0);
+  }

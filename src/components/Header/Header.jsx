@@ -1,6 +1,6 @@
-import './Header.css';
 import React, { useState, useContext } from 'react';
-import { WeatherContext} from '../context/weatherContext';
+import { WeatherContext} from '../../context/weatherContext';
+import './Header.css';
 
 export const Header = () => {
     const [inputValue, setInputValue] = useState('');

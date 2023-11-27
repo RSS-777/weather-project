@@ -4,14 +4,17 @@ header{
 
 h1{
     font-style: italic;
-    color: blue;
-    text-shadow: 1px 1px 3px rgb(233, 211, 211);
+    color: rgb(255, 98, 0);
+    text-shadow: 2px 2px 4px rgb(7, 7, 7);
     padding-left: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 50px;
 }
+
 h1::first-letter{
   text-transform: uppercase;
+  color:rgb(252, 54, 54);
 }
 
 .container-cityNameInput{
@@ -30,6 +33,7 @@ h1::first-letter{
     border-radius: 10px;
     box-shadow: 2px 2px 5px 1px rgb(215, 125, 125);
     padding-left: 10px;
+    margin-left: -10px;
 }
 
 .block-cityNameInput>button{
