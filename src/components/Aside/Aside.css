@@ -1,4 +1,9 @@
-aside{
-    background-image: linear-gradient(45deg, green, yellow, red);
+.aside{
+    background-image: linear-gradient(45deg, white, rgb(255, 170, 0), rgb(201, 1, 1));
+    text-align: center;
+}
+
+.aside-dark{
+    background-image: linear-gradient(45deg, black ,gray, white );
     text-align: center;
 }

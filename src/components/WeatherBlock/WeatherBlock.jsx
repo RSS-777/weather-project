@@ -3,9 +3,11 @@ import { WeatherContext } from '../../context/weatherContext';
 import WeatherTable from '../WeatherTable/WeatherTable';
 import { date } from '../../utils/date';
 import './WeatherBlock.css';
+import { ThemeContext } from '../../context/themeContext';
 
 export const WeatherBlock = () => {
     const { data } = useContext(WeatherContext);
+    const { theme } = useContext(ThemeContext);
     const [stateSeason, setStateSeason] = useState('');
     const [changeNumberDays, setChangeNumberDays] = useState(3)
 
@@ -18,7 +20,7 @@ export const WeatherBlock = () => {
     const changeShowSevenDays = () => {
         setChangeNumberDays(7)
     }
-    
+
     useEffect(() => {
         setStateSeason(date.season)
     }, [])
@@ -29,7 +31,11 @@ export const WeatherBlock = () => {
     if (!data || !data.forecast || !data.forecast.forecastday) {
         const forecastDays = Array.from({ length: changeNumberDays }, (_, index) => ({ index }));
         return (
-            <main className={stateSeason}>
+            <main className={theme === 'white' ? stateSeason : 'season-dark'}>
+                <button className={theme === 'white' ? 'btn-changeShowThree' : 'btn-changeShowThree-dark'} onClick={changeShowTreeDays}>3 дні</button>
+                <button className={theme === 'white' ? 'btn-changeShowFive' : 'btn-changeShowFive-dark'} onClick={changeShowFiveDays}>5 днів</button>
+                <button className={theme === 'white' ? 'btn-changeShowSeven' : 'btn-changeShowSeven-dark'} onClick={changeShowSevenDays}>7 днів</button>
+                
                 <div className="block-cards">
                     {forecastDays.map((dayData, index) => (
                         <div className={`cards${index}`} key={index}>
@@ -46,18 +52,18 @@ export const WeatherBlock = () => {
     }
 
     const forecastDays = data.forecast.forecastday.slice(0, changeNumberDays);
-
+    console.log(forecastDays)
     return (
-        <main className={stateSeason}>
-            <button className='btn-changeShowThree' onClick={changeShowTreeDays}>3 дні</button>
-            <button className='btn-changeShowFive' onClick={changeShowFiveDays}>5 днів</button>
-            <button className='btn-changeShowSeven' onClick={changeShowSevenDays}>7 днів</button>
+        <main className={theme === 'white' ? stateSeason : 'season-dark'}>
+            <button className={theme === 'white' ? 'btn-changeShowThree' : 'btn-changeShowThree-dark'} onClick={changeShowTreeDays}>3 дні</button>
+            <button className={theme === 'white' ? 'btn-changeShowFive' : 'btn-changeShowFive-dark'} onClick={changeShowFiveDays}>5 днів</button>
+            <button className={theme === 'white' ? 'btn-changeShowSeven' : 'btn-changeShowSeven-dark'} onClick={changeShowSevenDays}>7 днів</button>
 
             <div className="block-cards">
                 {forecastDays.map((dayData, index) => (
                     <div className={`cards${index}`} key={index}>
                         {index === 0 ? <span className='today'>Cьогодні</span> : null}
-                        <span className="day-week">{arrNameWeek[index + 1]}</span>
+                        <span className="day-week">{arrNameWeek[new Date(dayData.date_epoch * 1000).getDay()]}</span>
                         <h3 className='day-month'>{new Date(dayData.date_epoch * 1000).getDate()}</h3>
                         <img src={dayData.day.condition.icon} alt="Image weather" />
                         <div className="temp-day">{dayData.day.avgtemp_c}&deg;C</div>

@@ -1,4 +1,4 @@
-header{
+.header{
     background-color: rgb(246, 244, 206);
 }
 
@@ -26,7 +26,7 @@ h1::first-letter{
     height: 40px;
 }
 
-.block-cityNameInput>input{
+.input-search-city{
     font-size: 30px;
     background-color: rgb(232, 217, 206);
     border: none;
@@ -36,13 +36,20 @@ h1::first-letter{
     margin-left: -10px;
 }
 
-.block-cityNameInput>button{
+.btn-search-city{
     font-size: 30px;
     margin-left: 5px;
     background-color: rgb(232, 217, 206);
     border: none;
     border-radius: 10px;
     box-shadow: 2px 2px 5px 1px rgb(215, 125, 125);
+    cursor: pointer;
+}
+
+.btn-search-city:hover{
+    color: red;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px 1px rgb(98, 72, 0);
 }
 
 .placeLocationInfo{
@@ -50,4 +57,74 @@ h1::first-letter{
     color:rgb(0, 0, 0);
     padding-left: 20px;
     font-size: 24px;
+}
+
+.btn-theme{
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(233, 226, 222);
+    box-shadow: 2px 2px 5px 1px rgb(215, 86, 86);
+}
+
+.btn-theme:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 5px 1px rgb(98, 72, 0);
+}
+
+
+/*theme-dark*/
+.header-dark{
+    background-color: gray;
+}
+
+.btn-theme-dark{
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: black;
+    box-shadow: 0 1px 5px 1px rgb(206, 87, 87);
+}
+
+.btn-theme-dark:hover{
+    cursor: pointer;
+    box-shadow: 0 1px 5px 1px rgb(255, 255, 255);
+}
+
+.placeLocationInfo-dark{
+    text-shadow: 0 2px 3px rgb(229, 80, 80);
+    color: white;
+    padding-left: 20px;
+    font-size: 24px;
+}
+
+.input-search-city-dark{
+    font-size: 30px;
+    background-color: rgb(67, 67, 67);
+    color:white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 1px rgb(215, 125, 125);
+    padding-left: 10px;
+    margin-left: -10px;
+}
+
+.btn-search-city-dark{
+    font-size: 30px;
+    margin-left: 5px;
+    background-color: rgb(67, 67, 67);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 1px rgb(215, 125, 125);
+    cursor: pointer;
+}
+.btn-search-city-dark:hover{
+     box-shadow: 2px 2px 5px 1px white;
+     color:yellow;
 }

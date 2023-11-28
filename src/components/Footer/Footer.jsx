@@ -1,11 +1,14 @@
+import { useContext } from 'react';
 import './Footer.css'
+import {ThemeContext} from '../../context/themeContext'
 
 export const Footer = () => {
+  const {theme} = useContext(ThemeContext)
   return (
     <footer>
-      <div className="footer-content">
+      <div className={theme === 'white' ? 'footer-content' : 'footer-content-dark'}>
         <nav>
-          <ul className='footer-list'>
+          <ul className={theme === 'white' ? 'footer-list' : 'footer-list-dark'}>
             <li><a href="#">Про нас</a></li>
             <li><a href="#">Контакти</a></li>
             <li><a href="#">Послуги</a></li>

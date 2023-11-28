@@ -1,11 +1,8 @@
-footer{
-    background-color: rgb(246, 244, 206);
-}
-
 .footer-content{
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    background-color: rgb(246, 244, 206);
 }
 
 .footer-list{
@@ -20,6 +17,7 @@ footer{
 
 .footer-list>li>a{
     text-decoration: none;
+    text-shadow: 1px 1px 4px black;
 }
 
 .footer-list>li>a:hover{
@@ -30,3 +28,32 @@ footer{
     justify-self: end;
     padding-right: 20px;
 }
+
+/* theme-dark*/
+.footer-content-dark{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background-color: gray;
+    color: white;
+}
+
+.footer-list-dark{
+    display: flex;
+    list-style: none;
+    padding-left: 5px;
+ }
+ 
+ .footer-list-dark> li{
+     margin-left: 10px;
+ }
+ 
+ .footer-list-dark>li>a{
+     text-decoration: none;
+     color: blue;
+     text-shadow: 1px 1px 4px white;
+ }
+ 
+ .footer-list-dark>li>a:hover{
+     color: yellow;
+ }

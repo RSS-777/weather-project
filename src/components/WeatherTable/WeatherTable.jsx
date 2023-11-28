@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import './WeatherTable.css';
 import { WeatherContext } from '../../context/weatherContext';
-
+import {ThemeContext} from '../../context/themeContext';
 const Table = () => {
     const { data } = useContext(WeatherContext)
+    const { theme } = useContext(ThemeContext)
 
     if (!data || !data.forecast || !data.forecast.forecastday || !data.forecast.forecastday[0].hour) {
         return <p>Loading...</p>
@@ -16,9 +17,9 @@ const Table = () => {
         <table>
             <thead>
                 <tr>
-                    <th>Параметри</th>
+                    <th className={theme === 'white' ? 'title-white' : 'title-dark'}>Параметри</th>
                     {hours.map((hour, index) => (
-                        <th key={index}>{hour}</th>
+                        <th key={index} className={theme === 'white' ? 'title-white' : 'title-dark'}>{hour}</th>
                     ))}
                 </tr>
             </thead>
