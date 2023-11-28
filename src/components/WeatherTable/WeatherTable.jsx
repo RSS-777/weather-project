@@ -3,14 +3,14 @@ import './WeatherTable.css';
 import { WeatherContext } from '../../context/weatherContext';
 import {ThemeContext} from '../../context/themeContext';
 const Table = () => {
-    const { data } = useContext(WeatherContext)
+    const { data, indexCard } = useContext(WeatherContext)
     const { theme } = useContext(ThemeContext)
 
     if (!data || !data.forecast || !data.forecast.forecastday || !data.forecast.forecastday[0].hour) {
         return <p>Loading...</p>
     }
    
-    const dayData = data.forecast.forecastday[0];
+    const dayData = data.forecast.forecastday[indexCard];
     const hours = ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00'];
 
     return (

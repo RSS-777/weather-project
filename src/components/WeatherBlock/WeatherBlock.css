@@ -19,6 +19,7 @@
     box-shadow: 2px 2px 5px 1px rgb(215, 125, 125);
     color: rgb(255, 191, 0);
     text-align: center;
+    user-select: none;
 }
 
 .day-week {
@@ -162,6 +163,9 @@
     color:red;
 }
 
+.active-block{
+    box-shadow: 0 0 5px 2px rgb(214, 0, 0);
+}
 
 /* dark theme i do*/
 

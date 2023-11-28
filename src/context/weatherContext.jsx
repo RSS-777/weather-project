@@ -5,6 +5,7 @@ export const WeatherContext = createContext();
 export const WeatherProvider = ({ children }) => {
     const [data, setData] = useState([]);
     const [nameCity, setNameCity] = useState('Kyiv');
+    const [indexCard, setIndexCard] = useState(0);
 
     useEffect(() => {
         async function loadData() {
@@ -20,7 +21,7 @@ export const WeatherProvider = ({ children }) => {
     }, [nameCity])
 
     return (
-        <WeatherContext.Provider value = {{ data, setNameCity }}>
+        <WeatherContext.Provider value = {{ data, setNameCity, indexCard, setIndexCard }}>
             {children}
         </WeatherContext.Provider>
     )
