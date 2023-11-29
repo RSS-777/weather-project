@@ -172,7 +172,6 @@
 .season-dark{
     background-color: gray;
     background-image: linear-gradient(90deg, gray, rgba(79, 79, 79, 0.312));
-    /* box-shadow: 0 0 5px 0 black; */
 }
 
 .btn-changeShowThree-dark{
