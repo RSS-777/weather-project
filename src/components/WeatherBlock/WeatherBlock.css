@@ -103,7 +103,7 @@
 }
 
 .weather-info-block {
-    margin: 0 10px 10px 10px;
+    margin: 0 10px 0 10px;
     min-height: 400px;
     color: white;
     background-color: rgba(2, 2, 2, 0.712);
@@ -170,9 +170,9 @@
 /* dark theme i do*/
 
 .season-dark{
-    background-image: url('../../assets/image-dark.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: gray;
+    background-image: linear-gradient(90deg, gray, rgba(79, 79, 79, 0.312));
+    /* box-shadow: 0 0 5px 0 black; */
 }
 
 .btn-changeShowThree-dark{
