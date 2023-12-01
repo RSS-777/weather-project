@@ -1,8 +1,6 @@
-
 .block-cards {
     display: flex;
-    flex-wrap: nowrap;
-    height: 250px;
+    flex-wrap: wrap;
     gap: 10px;
     padding: 10px;
 }
@@ -14,7 +12,8 @@
     align-items: center;
     flex-grow: 1;
     min-width: 120px;
-    max-width: 220px;
+    max-width: 200px;
+    height: 250px;
     background-color: rgba(2, 2, 2, 0.712);
     box-shadow: 2px 2px 5px 1px rgb(215, 125, 125);
     color: rgb(255, 191, 0);
@@ -115,66 +114,66 @@
     top: 105px;
 }
 
-.btn-changeShowThree{
+.btn-changeShowThree {
     border-radius: 5px;
     border: none;
-    color:gray;
+    color: gray;
     background-color: rgb(232, 217, 206);
     box-shadow: 2px 2px 5px 1px rgb(206, 87, 87);
     margin-left: 10px;
     margin-top: 5px;
 }
 
-.btn-changeShowThree:hover{
+.btn-changeShowThree:hover {
     cursor: pointer;
     box-shadow: 2px 2px 5px 1px rgb(98, 72, 0);
-    color:red;
+    color: red;
 }
 
-.btn-changeShowFive{
+.btn-changeShowFive {
     border-radius: 5px;
     border: none;
-    color:gray;
+    color: gray;
     background-color: rgb(232, 217, 206);
     box-shadow: 2px 2px 5px 1px rgb(215, 86, 86);
     margin-left: 5px;
     margin-top: 5px;
 }
 
-.btn-changeShowFive:hover{
+.btn-changeShowFive:hover {
     cursor: pointer;
     box-shadow: 2px 2px 5px 1px rgb(98, 72, 0);
-    color:red;
+    color: red;
 }
 
-.btn-changeShowSeven{
+.btn-changeShowSeven {
     border-radius: 5px;
     border: none;
-    color:gray;
+    color: gray;
     background-color: rgb(232, 217, 206);
     box-shadow: 2px 2px 5px 1px rgb(215, 86, 86);
     margin-left: 5px;
     margin-top: 5px;
 }
 
-.btn-changeShowSeven:hover{
+.btn-changeShowSeven:hover {
     cursor: pointer;
     box-shadow: 2px 2px 5px 1px rgb(98, 72, 0);
-    color:red;
+    color: red;
 }
 
-.active-block{
+.active-block {
     box-shadow: 0 0 5px 2px rgb(214, 0, 0);
 }
 
 /* dark theme i do*/
 
-.season-dark{
+.season-dark {
     background-color: gray;
     background-image: linear-gradient(90deg, gray, rgba(79, 79, 79, 0.312));
 }
 
-.btn-changeShowThree-dark{
+.btn-changeShowThree-dark {
     border-radius: 5px;
     border: none;
     color: white;
@@ -184,13 +183,13 @@
     margin-top: 5px;
 }
 
-.btn-changeShowThree-dark:hover{
+.btn-changeShowThree-dark:hover {
     cursor: pointer;
     box-shadow: 0 1px 5px 1px rgb(255, 255, 255);
-    color:yellow;
+    color: yellow;
 }
 
-.btn-changeShowFive-dark{
+.btn-changeShowFive-dark {
     border-radius: 5px;
     border: none;
     color: white;
@@ -200,13 +199,13 @@
     margin-top: 5px;
 }
 
-.btn-changeShowFive-dark:hover{
+.btn-changeShowFive-dark:hover {
     cursor: pointer;
     box-shadow: 0 1px 5px 1px rgb(255, 255, 255);
-    color:yellow;
+    color: yellow;
 }
 
-.btn-changeShowSeven-dark{
+.btn-changeShowSeven-dark {
     border-radius: 5px;
     border: none;
     color: white;
@@ -216,8 +215,47 @@
     margin-top: 5px;
 }
 
-.btn-changeShowSeven-dark:hover{
+.btn-changeShowSeven-dark:hover {
     cursor: pointer;
     box-shadow: 0 1px 5px 1px rgb(255, 255, 255);
-    color:yellow;
+    color: yellow;
+}
+
+@media (max-width: 992px) {
+    [class^="cards"] {
+        min-width: 180px;
+        max-width: 220px;
+    }
+
+    .weather-info-block {
+        min-height: 392px;
+    }
+}
+
+@media (max-width: 768px) {
+    .weather-info-block {
+        min-height: 264px;
+    }
+}
+
+@media (max-width: 540px) {
+    .block-cards {
+        justify-content: center;
+    }
+
+    [class^="cards"] {
+        flex-grow: 1;
+        min-width: 150px;
+        max-width: 220px;
+    }
+
+    .weather-info-block {
+        display: none;
+    }
+}
+
+@media (max-width: 362px) {
+    .today {
+        left: 18%;
+    }
 }

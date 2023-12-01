@@ -1,9 +1,67 @@
-.aside{
+.aside-dark{
+    background-image: linear-gradient(90deg, rgb(111, 111, 111), black );
+    text-align: center;
+}
+
+.winter-aside{
+    background-image: linear-gradient(90deg, #BCCDE7, rgb(142, 142, 240));
+    text-align: center;
+}
+
+.spring-aside{
+    background-image: linear-gradient(90deg, #CBE9E9, rgba(107, 255, 253, 0.761));
+    text-align: center;
+}
+
+.summer-aside{
+    background-image: linear-gradient(90deg, #FFBA6C, rgb(249, 153, 74));
+    text-align: center;
+}
+
+.autumn-aside{
     background-image: linear-gradient(45deg, white, rgb(255, 170, 0), rgb(201, 1, 1));
     text-align: center;
 }
 
-.aside-dark{
-    background-image: linear-gradient(90deg, rgb(111, 111, 111), black );
-    text-align: center;
+@media (max-width: 992px) {
+    .winter-aside{
+        background-image: linear-gradient(-45deg, #F4F4F4, #C9C9C9);
+        text-align: center;
+    }
+
+    .spring-aside{
+        background-image: linear-gradient(90deg, #CBE9E9, rgba(107, 255, 253, 0.761));
+        text-align: center;
+    }
+
+    .autumn-aside{
+        background-image: linear-gradient(45deg, white, rgb(255, 170, 0), rgb(201, 1, 1));
+        text-align: center;
+    }
+    .summer-aside{
+        background-image: linear-gradient(rgb(74, 129, 249), #FFBA6C);
+        text-align: center;
+    }
+
+}
+@media (max-width: 768px) {
+    .winter-aside{
+        display: none;
+    }
+
+    .spring-aside{
+        display: none;
+    }
+
+    .autumn-aside{
+        display: none;
+    }
+
+    .summer-aside{
+        display: none;
+    }
+
+    .aside-dark{
+        display: none;
+    }
 }

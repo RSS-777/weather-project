@@ -1,8 +1,8 @@
-.header{
+.header {
     background-color: rgb(246, 244, 206);
 }
 
-h1{
+h1 {
     font-style: italic;
     color: rgb(255, 98, 0);
     text-shadow: 2px 2px 4px rgb(7, 7, 7);
@@ -12,12 +12,12 @@ h1{
     font-size: 50px;
 }
 
-h1::first-letter{
-  text-transform: uppercase;
-  color:rgb(252, 54, 54);
+h1::first-letter {
+    text-transform: uppercase;
+    color: rgb(252, 54, 54);
 }
 
-.container-cityNameInput{
+.container-cityNameInput {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,8 +26,8 @@ h1::first-letter{
     height: 40px;
 }
 
-.input-search-city{
-    font-size: 30px;
+.input-search-city {
+    font-size: 28px;
     background-color: rgb(232, 217, 206);
     border: none;
     border-radius: 10px;
@@ -36,8 +36,8 @@ h1::first-letter{
     margin-left: -10px;
 }
 
-.btn-search-city{
-    font-size: 30px;
+.btn-search-city {
+    font-size: 28px;
     margin-left: 5px;
     background-color: rgb(232, 217, 206);
     border: none;
@@ -46,20 +46,20 @@ h1::first-letter{
     cursor: pointer;
 }
 
-.btn-search-city:hover{
+.btn-search-city:hover {
     color: red;
     cursor: pointer;
     box-shadow: 2px 2px 5px 1px rgb(98, 72, 0);
 }
 
-.placeLocationInfo{
+.placeLocationInfo {
     text-shadow: 0 2px 3px rgb(229, 80, 80);
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
     padding-left: 20px;
-    font-size: 24px;
+    font-size: 22px;
 }
 
-.btn-theme{
+.btn-theme {
     position: absolute;
     right: 20px;
     top: 40px;
@@ -69,18 +69,18 @@ h1::first-letter{
     box-shadow: 2px 2px 5px 1px rgb(215, 86, 86);
 }
 
-.btn-theme:hover{
+.btn-theme:hover {
     cursor: pointer;
     box-shadow: 2px 2px 5px 1px rgb(98, 72, 0);
 }
 
 
 /*theme-dark*/
-.header-dark{
+.header-dark {
     background-color: gray;
 }
 
-.btn-theme-dark{
+.btn-theme-dark {
     position: absolute;
     right: 20px;
     top: 40px;
@@ -91,22 +91,22 @@ h1::first-letter{
     box-shadow: 0 1px 5px 1px rgb(206, 87, 87);
 }
 
-.btn-theme-dark:hover{
+.btn-theme-dark:hover {
     cursor: pointer;
     box-shadow: 0 1px 5px 1px rgb(255, 255, 255);
 }
 
-.placeLocationInfo-dark{
+.placeLocationInfo-dark {
     text-shadow: 0 2px 3px rgb(229, 80, 80);
     color: white;
     padding-left: 20px;
-    font-size: 24px;
+    font-size: 22px;
 }
 
-.input-search-city-dark{
-    font-size: 30px;
+.input-search-city-dark {
+    font-size: 28px;
     background-color: rgb(67, 67, 67);
-    color:white;
+    color: white;
     border: none;
     border-radius: 10px;
     box-shadow: 2px 2px 5px 1px rgb(215, 125, 125);
@@ -114,8 +114,8 @@ h1::first-letter{
     margin-left: -10px;
 }
 
-.btn-search-city-dark{
-    font-size: 30px;
+.btn-search-city-dark {
+    font-size: 28px;
     margin-left: 5px;
     background-color: rgb(67, 67, 67);
     color: white;
@@ -124,7 +124,98 @@ h1::first-letter{
     box-shadow: 2px 2px 5px 1px rgb(215, 125, 125);
     cursor: pointer;
 }
-.btn-search-city-dark:hover{
-     box-shadow: 2px 2px 5px 1px white;
-     color:yellow;
+
+.btn-search-city-dark:hover {
+    box-shadow: 2px 2px 5px 1px white;
+    color: yellow;
+}
+
+@media (max-width: 992px) {
+    .input-search-city {
+        font-size: 22px;
+    }
+
+    .btn-search-city {
+        font-size: 22px;
+    }
+
+    .input-search-city-dark {
+        font-size: 22px;
+    }
+
+    .btn-search-city-dark {
+        font-size: 22px;
+    }
+    .placeLocationInfo {
+        font-size: 18px;
+    }
+
+    .placeLocationInfo-dark {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-cityNameInput {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        margin: 0 20px 5px;
+        height: 60px;
+    }
+
+    .block-cityNameInput {
+        width: 100%;
+    }
+
+    .placeLocationInfo {
+        font-size: 16px;
+        text-align: right;
+        width: 100%;
+        padding: 0;
+    }
+
+    .placeLocationInfo-dark {
+        font-size: 16px;
+        text-align: right;
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media (max-width: 540px) {
+    .container-cityNameInput {
+        margin: 0 20px 5px;
+    }
+
+    .input-search-city {
+        font-size: 18px;
+        width: 200px;
+        height: 25px;
+    }
+
+    .btn-search-city {
+        font-size: 18px;
+        height: 25px;
+    }
+
+    .input-search-city-dark {
+        font-size: 18px;
+        width: 200px;
+        height: 25px;
+    }
+
+    .btn-search-city-dark {
+        font-size: 18px;
+        height: 25px;
+    }
+
+    .placeLocationInfo {
+        text-align: center;
+    }
+
+    .placeLocationInfo-dark {
+        text-align: center;
+    }
 }

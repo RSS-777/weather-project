@@ -11,34 +11,38 @@ export const WeatherBlock = () => {
     const [stateSeason, setStateSeason] = useState('');
     const [changeNumberDays, setChangeNumberDays] = useState(3);
     const refs = useRef([]);
-    const activeBlock = useRef(null);
-
 
     const changeFocus = (index) => {
         const activeElement = refs.current[index];
-        activeBlock.current = activeElement;
+        const filteredRefs = refs.current.filter(elem => elem !== null);
+        refs.current = filteredRefs;
+
         if (!activeElement.classList.contains('active-block')) {
             refs.current.forEach((elem) => {
                 if (elem !== activeElement && elem.classList.contains('active-block')) {
                     elem.classList.remove('active-block')
                 }
             });
-            activeElement.classList.toggle('active-block')
-            setIndexCard(index)
+            if (activeElement) {
+                activeElement.classList.toggle('active-block')
+                setIndexCard(index)
+            }
         }
     }
-    
+
     useEffect(() => {
-      if(refs.current[0]){
-        refs.current[0].classList.add('active-block')
-      }
-    },[])
+        if (refs.current[0]) {
+            refs.current[0].classList.add('active-block')
+        }
+    }, [])
 
     const changeShowTreeDays = () => {
         setChangeNumberDays(3)
+        changeFocus(0)
     }
     const changeShowFiveDays = () => {
         setChangeNumberDays(5)
+        changeFocus(0)
     }
     const changeShowSevenDays = () => {
         setChangeNumberDays(7)
