@@ -1,13 +1,16 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { WeatherContext } from '../../context/weatherContext';
 import './Header.css';
-import { ThemeContext } from '../../context/themeContext'
+import { ThemeContext } from '../../context/themeContext';
+import { date } from '../../utils/date';
+
 
 export const Header = () => {
     const [inputValue, setInputValue] = useState('');
     const { data, setNameCity } = useContext(WeatherContext)
     const { theme, setTheme } = useContext(ThemeContext)
-
+    const [stateSeason, setStateSeason] = useState('');
+    
     const nameCity = data?.location?.name || 'Місцезнаходження чи назва недоступні';
     const country = data?.location?.country || '';
     const region = data?.location?.region || '';
@@ -22,8 +25,12 @@ export const Header = () => {
         setInputValue('')
     }
 
+    useEffect(() => {
+        setStateSeason(date.season)
+    }, [])
+
     return (
-        <header className={theme === 'white' ? 'header' : 'header-dark'}>
+        <header className={theme === 'white' ? `header-${stateSeason}` : 'header-dark'}>
             <h1>погода</h1>
             <button className={theme === 'white' ? 'btn-theme' : 'btn-theme-dark'} onClick={() => {
                 setTheme(theme === 'white' ? 'dark' : 'white')

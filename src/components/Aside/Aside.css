@@ -1,46 +1,79 @@
+aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+    padding: 20px;
+}
 .aside-dark{
-    background-image: linear-gradient(90deg, rgb(111, 111, 111), black );
+    background-color: rgb(111, 111, 111);
     text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .winter-aside{
-    background-image: linear-gradient(90deg, #BCCDE7, rgb(142, 142, 240));
+    background-image: linear-gradient(#BCCDE7, #BDD4ED,  #F0F0F0);
     text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .spring-aside{
-    background-image: linear-gradient(90deg, #CBE9E9, rgba(107, 255, 253, 0.761));
+    background-image: linear-gradient(#9FDBE3, #9FDBE3, #AAC738);
     text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .summer-aside{
-    background-image: linear-gradient(90deg, #FFBA6C, rgb(249, 153, 74));
+    background-image: linear-gradient(#FEDEA5, #FEDEA5, #0090FC);
     text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .autumn-aside{
-    background-image: linear-gradient(45deg, white, rgb(255, 170, 0), rgb(201, 1, 1));
+    background-image: linear-gradient(#F3E6D3, #FFF6E3);
     text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.advertising{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 180px;
+    background-color: white;
+    box-shadow: 2px 2px 8px black;
 }
 
 @media (max-width: 992px) {
+    aside{
+        flex-direction: row;
+    }
+
     .winter-aside{
-        background-image: linear-gradient(-45deg, #F4F4F4, #C9C9C9);
-        text-align: center;
+        background-image: linear-gradient(45deg, #C9C9C9, #FAFAFA);
     }
 
     .spring-aside{
-        background-image: linear-gradient(90deg, #CBE9E9, rgba(107, 255, 253, 0.761));
-        text-align: center;
+        background-image: linear-gradient(#AAC738, #83992b);
     }
 
     .autumn-aside{
-        background-image: linear-gradient(45deg, white, rgb(255, 170, 0), rgb(201, 1, 1));
-        text-align: center;
+        background-image: linear-gradient(90deg, #CD360A, #FFAF67, rgb(243, 235, 224));
     }
+
     .summer-aside{
         background-image: linear-gradient(rgb(74, 129, 249), #FFBA6C);
-        text-align: center;
+    }
+
+    .aside-dark{
+        background-image: none;
+        background-color: rgb(111, 111, 111);
     }
 
 }

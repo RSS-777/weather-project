@@ -14,8 +14,9 @@ export const Aside = () => {
 
     return(
         <aside className={theme === 'white' ? `${stateSeason}` : 'aside-dark'}>
-            <h2>aside</h2>
-            < Map />
+            <div className="advertising"> Тут може бути ваша реклама!</div>
+            <div className="advertising"> Тут може бути ваша реклама!</div>
+            <div className="advertising"> Тут може бути ваша реклама!</div>
         </aside>
     )
 }

@@ -1,3 +1,6 @@
+main{
+    margin: 10px 10px 10px 0;
+}
 .block-cards {
     display: flex;
     flex-wrap: wrap;
@@ -19,6 +22,7 @@
     color: rgb(255, 191, 0);
     text-align: center;
     user-select: none;
+    border-radius: 10px;
 }
 
 .day-week {
@@ -43,12 +47,13 @@
 
 .today {
     position: absolute;
-    left: 18px;
+    left: 19px;
     color: red;
     font-size: 9px;
     padding: 0 1px;
     position: absolute;
     background-color: white;
+    border-radius: 5px 0 0 0;
 }
 
 .temp-day {
@@ -166,7 +171,7 @@
     box-shadow: 0 0 5px 2px rgb(214, 0, 0);
 }
 
-/* dark theme i do*/
+/* dark theme */
 
 .season-dark {
     background-color: gray;
@@ -222,6 +227,10 @@
 }
 
 @media (max-width: 992px) {
+    main{
+        margin: 10px 0 0 0;
+    }
+
     [class^="cards"] {
         min-width: 180px;
         max-width: 220px;

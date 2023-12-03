@@ -1,5 +1,17 @@
-.header {
-    background-color: rgb(246, 244, 206);
+.header-winter {
+    background-color: #BCCDE7;
+}
+
+.header-spring {
+    background-color: #9FDBE3;
+}
+
+.header-summer {
+    background-color: #FEDEA5;
+}
+
+.header-autumn {
+    background-color: #F3E6D3;
 }
 
 h1 {
@@ -157,9 +169,7 @@ h1::first-letter {
 
 @media (max-width: 768px) {
     .container-cityNameInput {
-        display: flex;
         flex-direction: column;
-        justify-content: space-between;
         align-items: start;
         margin: 0 20px 5px;
         height: 60px;
