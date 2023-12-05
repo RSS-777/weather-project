@@ -20,23 +20,42 @@ footer>div {
     background-color: rgb(246, 244, 206);
 }
 
-.footer-list {
+ul {
     display: flex;
     list-style: none;
     padding-left: 5px;
 }
 
-.footer-list>li {
+ul>li {
     margin-left: 10px;
 }
 
-.footer-list>li>a {
+ul>li>a {
     text-decoration: none;
+}
+
+ul>li>a:hover {
+    color: rgb(195, 0, 0);
+}
+
+.footer-list-winter a{
+    color: blue;
     text-shadow: 1px 1px 4px black;
 }
 
-.footer-list>li>a:hover {
-    color: red;
+.footer-list-spring a{
+    color: blue;
+    text-shadow: 1px 1px 4px black;
+}
+
+.footer-list-summer a{
+   color: white;
+   text-shadow: 1px 1px 4px black;
+}
+
+.footer-list-autumn a{
+    color: blue;
+    text-shadow: 1px 1px 4px black;
 }
 
 .author {
@@ -50,18 +69,7 @@ footer>div {
     color: white;
 }
 
-.footer-list-dark {
-    display: flex;
-    list-style: none;
-    padding-left: 5px;
-}
-
-.footer-list-dark>li {
-    margin-left: 10px;
-}
-
 .footer-list-dark>li>a {
-    text-decoration: none;
     color: blue;
     text-shadow: 1px 1px 4px white;
 }
@@ -84,14 +92,14 @@ footer>div {
         background-image: none;
     }
 
-    .footer-list>li>a {
-        color: blue;
-    }
-
     .footer-content-autumn {
         background-color: none;
         background-image: linear-gradient(90deg, #CD360A, #FFAF67, rgb(243, 235, 224));
     }
+
+    .footer-list-summer a{
+        color: blue;
+     }
 }
 
 @media (max-width: 768px) {
@@ -111,13 +119,16 @@ footer>div {
         background-image: linear-gradient(90deg, #014EDC, #0093F8);
     }
 
-    .footer-list>li>a {
-       color: rgb(255, 255, 255);
-       text-shadow: 0 0 3px blue;
-    }
-
     .footer-content-winter {
         background-image: linear-gradient(90deg, #C9C9C9, #f4f4f4);
+    }
+
+    .footer-list-summer a{
+        color: white;
+     }
+     
+     .footer-list-autumn a{
+        text-shadow: 1px 1px 4px rgb(255, 255, 255);
     }
 }
 

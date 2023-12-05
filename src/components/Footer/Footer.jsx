@@ -15,7 +15,7 @@ export const Footer = () => {
     <footer>
       <div className={theme === 'white' ? `footer-content-${stateSeason}` : 'footer-content-dark'}>
         <nav>
-          <ul className={theme === 'white' ? 'footer-list' : 'footer-list-dark'}>
+          <ul className={theme === 'white' ? `footer-list-${date.season}` : 'footer-list-dark'}>
             <li><a href="#">Про нас</a></li>
             <li><a href="#">Контакти</a></li>
             <li><a href="#">Послуги</a></li>

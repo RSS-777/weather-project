@@ -6,6 +6,7 @@ import { Aside } from './components/Aside/Aside';
 import './App.css'
 import { WeatherProvider } from './context/weatherContext';
 import { ThemeProvider } from './context/themeContext'
+
 function App() {
   return (
     <ThemeProvider>

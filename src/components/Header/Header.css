@@ -1,3 +1,6 @@
+header{
+    min-width: 315px;
+}
 .header-winter {
     background-color: #BCCDE7;
 }
@@ -223,9 +226,11 @@ h1::first-letter {
 
     .placeLocationInfo {
         text-align: center;
+        font-size: 14px;
     }
 
     .placeLocationInfo-dark {
         text-align: center;
+        font-size: 14px;
     }
 }
