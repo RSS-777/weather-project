@@ -30,7 +30,7 @@ export const About = () => {
                 </div>
                 <div className="about-text">
                     <span><b>Мої навички веб-розробника:</b></span>
-                    <p>Маю досвід розробки веб-сторінок з використанням <span class="highlighted">HTML</span>, <span class="highlighted">CSS</span> та <span class="highlighted">JavaScript</span>. Розумію <span class="highlighted">React</span> і роботу з <span class="highlighted">API</span> для отримання даних. Використовую <span class="highlighted">Vite</span> для оптимізації процесу розробки. Готовий вдосконалювати свої навички та вчитися новому.</p>
+                    <p>Маю досвід розробки веб-сторінок з використанням <span className="highlighted">HTML</span>, <span className="highlighted">CSS</span> та <span className="highlighted">JavaScript</span>. Розумію <span className="highlighted">React</span> і роботу з <span className="highlighted">API</span> для отримання даних. Використовую <span className="highlighted">Vite</span> для оптимізації процесу розробки. Готовий вдосконалювати свої навички та вчитися новому.</p>
                 </div>
             </div>
         </article>
