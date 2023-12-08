@@ -1,13 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { WeatherContext } from '../../context/weatherContext';
-import './Header.css';
 import { ThemeContext } from '../../context/themeContext';
 import { date } from '../../utils/date';
+import './Header.css';
 
 export const Header = () => {
     const [inputValue, setInputValue] = useState('');
-    const { data, setNameCity } = useContext(WeatherContext)
-    const { theme, setTheme } = useContext(ThemeContext)
+    const { data, setNameCity } = useContext(WeatherContext);
+    const { theme, setTheme } = useContext(ThemeContext);
     const [stateSeason, setStateSeason] = useState('');
     const nameCity = data?.location?.name || 'Місцезнаходження чи назва недоступні';
     const country = data?.location?.country || '';
@@ -15,14 +15,14 @@ export const Header = () => {
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
-    }
+    };
 
     const handlerButtonClick = () => {
         if (inputValue !== '') {
             setNameCity(inputValue)
         }
         setInputValue('')
-    }
+    };
 
     useEffect(() => {
         setStateSeason(date.season)
@@ -53,4 +53,4 @@ export const Header = () => {
             </div>
         </header>
     )
-}
+};

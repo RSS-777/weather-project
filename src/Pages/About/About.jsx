@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { ThemeContext } from '../../context/themeContext';
 import { date } from '../../utils/date';
-import './About.css'
+import './About.css';
 
 export const About = () => {
     const [stateSeason, setStateSeason] = useState('');
@@ -34,5 +34,5 @@ export const About = () => {
             </div>
         </article>
     )
-}
+};
 

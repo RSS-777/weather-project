@@ -27,7 +27,7 @@ export const ContactForm = () => {
         }
 
         return errors
-    }
+    };
 
     return (
         <Formik
@@ -64,4 +64,4 @@ export const ContactForm = () => {
             }}
         </Formik>
     )
-}
+};

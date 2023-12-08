@@ -1,10 +1,10 @@
 import { useContext, useState, useEffect } from 'react';
 import { ThemeContext } from '../../context/themeContext';
-import './Aside.css';
 import { date } from '../../utils/date';
+import './Aside.css';
 
 export const Aside = () => {
-    const { theme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext);
     const [stateSeason, setStateSeason] = useState('');
 
     useEffect(() => {
@@ -18,4 +18,4 @@ export const Aside = () => {
             <div className="advertising">Тут може бути ваша реклама!</div>
         </aside>
     )
-}
+};

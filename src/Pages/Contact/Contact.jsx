@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { ThemeContext } from '../../context/themeContext';
 import { date } from '../../utils/date';
-import './Contact.css'
-import { ContactForm } from '../../components/ContactForm'
+import './Contact.css';
+import { ContactForm } from '../../components/ContactForm';
 
 export const Contact = () => {
     const [stateSeason, setStateSeason] = useState('');
@@ -29,4 +29,4 @@ export const Contact = () => {
             </div>
         </article>
     )
-}
+};

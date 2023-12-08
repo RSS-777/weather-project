@@ -1,11 +1,11 @@
 import { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './Footer.css'
-import { ThemeContext } from '../../context/themeContext'
+import { ThemeContext } from '../../context/themeContext';
 import { date } from '../../utils/date';
+import './Footer.css';
 
 export const Footer = () => {
-  const { theme } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext);
   const [stateSeason, setStateSeason] = useState('');
 
   useEffect(() => {
@@ -22,8 +22,8 @@ export const Footer = () => {
             <li><Link to="/contact">Контакти</Link></li>
           </ul>
         </nav>
-        <p className='author'>© 2023 RSS-777   "Погода" </p>
+        <p className='author'>© 2023 RSS-777 "Погода" </p>
       </div>
     </footer>
   )
-}
+};

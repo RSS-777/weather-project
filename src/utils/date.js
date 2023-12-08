@@ -19,4 +19,4 @@ export const date = {
   minute,
   second,
   season
-}
+};

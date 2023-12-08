@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext, useRef } from 'react';
 import { WeatherContext } from '../../context/weatherContext';
 import WeatherTable from '../WeatherTable/WeatherTable';
 import { date } from '../../utils/date';
-import './WeatherBlock.css';
 import { ThemeContext } from '../../context/themeContext';
+import './WeatherBlock.css';
 
 export const WeatherBlock = () => {
     const { data, setIndexCard } = useContext(WeatherContext);
@@ -28,7 +28,7 @@ export const WeatherBlock = () => {
                 setIndexCard(index)
             }
         }
-    }
+    };
 
     useEffect(() => {
         if (refs.current[0]) {
@@ -39,16 +39,16 @@ export const WeatherBlock = () => {
     const changeShowTreeDays = () => {
         setChangeNumberDays(3)
         changeFocus(0)
-    }
+    };
 
     const changeShowFiveDays = () => {
         setChangeNumberDays(5)
         changeFocus(0)
-    }
+    };
 
     const changeShowSevenDays = () => {
         setChangeNumberDays(7)
-    }
+    };
 
     useEffect(() => {
         setStateSeason(date.season)
@@ -83,7 +83,7 @@ export const WeatherBlock = () => {
                 </div>
             </main>
         )
-    }
+    };
 
     const forecastDays = data.forecast.forecastday.slice(0, changeNumberDays);
 
@@ -121,4 +121,4 @@ export const WeatherBlock = () => {
             </div>
         </main>
     )
-}
+};

@@ -1,7 +1,7 @@
 import { Header } from '../../components/Header/Header';
 import { WeatherBlock } from '../../components/WeatherBlock/WeatherBlock';
 import { Aside } from '../../components/Aside/Aside';
-import './Home.css'
+import './Home.css';
 
 export const Home = () => {
     return (
@@ -13,4 +13,4 @@ export const Home = () => {
             </div>
         </div>
     )
-}
+};
