@@ -10,35 +10,30 @@ aside {
     background-color: rgb(111, 111, 111);
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .winter-aside {
     background-image: linear-gradient(#BCCDE7, #BDD4ED, #F0F0F0);
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .spring-aside {
     background-image: linear-gradient(#9FDBE3, #9FDBE3, #AAC738);
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .summer-aside {
     background-image: linear-gradient(#FEDEA5, #FEDEA5, #0090FC);
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .autumn-aside {
     background-image: linear-gradient(#F3E6D3, #FFF6E3);
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .advertising {
