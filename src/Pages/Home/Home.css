@@ -14,12 +14,14 @@
         grid-template: 3fr 1fr / 1fr;
     }
 }
+
 @media (max-width: 768px) {
     .wrapper {
         display: grid;
-        grid-template: auto 1fr  / 1fr;
+        grid-template: auto 1fr / 1fr;
         min-height: 90vh;
     }
+
     .main-container {
         display: grid;
         grid-template: 1fr / 1fr;

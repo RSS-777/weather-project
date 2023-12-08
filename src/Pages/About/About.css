@@ -36,7 +36,7 @@
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.472);
     padding: 30px;
-    margin:  40px;
+    margin: 40px;
     border-radius: 20px;
 }
 
@@ -55,17 +55,16 @@
     color: rgb(252, 54, 54);
 }
 
-.about-text span > b{
+.about-text span>b {
     color: rgb(227, 191, 191);
     text-shadow: 0 0 3px black;
 }
 
-.about-text p{
+.about-text p {
     color: white;
 }
 
-.highlighted{
+.highlighted {
     color: rgb(103, 192, 255);
     text-shadow: 0 0 3px black;
 }
-

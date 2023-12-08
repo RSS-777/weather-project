@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import './WeatherTable.css';
 import { WeatherContext } from '../../context/weatherContext';
 import { ThemeContext } from '../../context/themeContext';
+
 const Table = () => {
     const { data, indexCard } = useContext(WeatherContext)
     const { theme } = useContext(ThemeContext)

@@ -3,7 +3,6 @@ import { ThemeContext } from '../../context/themeContext';
 import { date } from '../../utils/date';
 import './About.css'
 
-
 export const About = () => {
     const [stateSeason, setStateSeason] = useState('');
     const { theme } = useContext(ThemeContext);

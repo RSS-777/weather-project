@@ -5,7 +5,6 @@ import { Home } from './Pages/Home/Home'
 import { Contact } from './Pages/Contact/Contact';
 import { About } from './Pages/About/About';
 import { Footer } from './components/Footer/Footer';
-
 import { WeatherProvider } from './context/weatherContext';
 import { ThemeProvider } from './context/themeContext'
 

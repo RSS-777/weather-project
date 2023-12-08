@@ -45,7 +45,7 @@ export const WeatherBlock = () => {
         setChangeNumberDays(5)
         changeFocus(0)
     }
-    
+
     const changeShowSevenDays = () => {
         setChangeNumberDays(7)
     }
@@ -115,7 +115,6 @@ export const WeatherBlock = () => {
                         <div className='month'>{monthName[dayData.date.split('-')[1] - 1]}</div>
                     </div>
                 ))}
-
             </div>
             <div className="weather-info-block">
                 < WeatherTable />

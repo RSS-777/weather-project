@@ -1,6 +1,7 @@
-header{
+header {
     min-width: 315px;
 }
+
 .header-winter {
     background-color: #BCCDE7;
 }
@@ -89,8 +90,6 @@ h1::first-letter {
     box-shadow: 2px 2px 5px 1px rgb(98, 72, 0);
 }
 
-
-/*theme-dark*/
 .header-dark {
     background-color: gray;
 }
@@ -161,6 +160,7 @@ h1::first-letter {
     .btn-search-city-dark {
         font-size: 22px;
     }
+
     .placeLocationInfo {
         font-size: 18px;
     }

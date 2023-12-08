@@ -6,10 +6,10 @@ import './Home.css'
 export const Home = () => {
     return (
         <div className="wrapper">
-            < Header />
+            <Header />
             <div className="main-container">
-                < WeatherBlock />
-                < Aside />
+                <WeatherBlock />
+                <Aside />
             </div>
         </div>
     )

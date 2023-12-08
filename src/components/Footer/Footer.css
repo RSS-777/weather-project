@@ -39,22 +39,22 @@ ul>li>a:hover {
     color: rgb(195, 0, 0);
 }
 
-.footer-list-winter a{
+.footer-list-winter a {
     color: blue;
     text-shadow: 1px 1px 4px black;
 }
 
-.footer-list-spring a{
+.footer-list-spring a {
     color: blue;
     text-shadow: 1px 1px 4px black;
 }
 
-.footer-list-summer a{
-   color: white;
-   text-shadow: 1px 1px 4px black;
+.footer-list-summer a {
+    color: white;
+    text-shadow: 1px 1px 4px black;
 }
 
-.footer-list-autumn a{
+.footer-list-autumn a {
     color: blue;
     text-shadow: 1px 1px 4px black;
 }
@@ -64,7 +64,6 @@ ul>li>a:hover {
     padding-right: 20px;
 }
 
-/* theme-dark*/
 .footer-content-dark {
     background-color: gray;
     color: white;
@@ -83,7 +82,7 @@ ul>li>a:hover {
     .footer-content-winter {
         background-image: linear-gradient(90deg, #C9C9C9, #f4f4f4);
     }
-    
+
     .footer-content-spring {
         background-color: #83992b;
     }
@@ -98,9 +97,9 @@ ul>li>a:hover {
         background-image: linear-gradient(90deg, #CD360A, #FFAF67, rgb(243, 235, 224));
     }
 
-    .footer-list-summer a{
+    .footer-list-summer a {
         color: blue;
-     }
+    }
 }
 
 @media (max-width: 768px) {
@@ -123,12 +122,11 @@ ul>li>a:hover {
         background-image: linear-gradient(90deg, #C9C9C9, #f4f4f4);
     }
 
-    .footer-list-summer a{
+    .footer-list-summer a {
         color: white;
-     }
-     
-     .footer-list-autumn a{
+    }
+
+    .footer-list-autumn a {
         text-shadow: 1px 1px 4px rgb(255, 255, 255);
     }
 }
-

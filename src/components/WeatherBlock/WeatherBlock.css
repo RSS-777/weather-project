@@ -173,8 +173,6 @@ main {
     box-shadow: 0 0 5px 2px rgb(214, 0, 0);
 }
 
-/* dark theme */
-
 .season-dark {
     background-color: gray;
     background-image: linear-gradient(90deg, gray, rgba(79, 79, 79, 0.312));
@@ -230,7 +228,7 @@ main {
 
 @media (max-width: 992px) {
     main {
-       margin-right: 0;
+        margin-right: 0;
     }
 
     [class^="cards"] {

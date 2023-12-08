@@ -4,13 +4,11 @@ import './Header.css';
 import { ThemeContext } from '../../context/themeContext';
 import { date } from '../../utils/date';
 
-
 export const Header = () => {
     const [inputValue, setInputValue] = useState('');
     const { data, setNameCity } = useContext(WeatherContext)
     const { theme, setTheme } = useContext(ThemeContext)
     const [stateSeason, setStateSeason] = useState('');
-    
     const nameCity = data?.location?.name || 'Місцезнаходження чи назва недоступні';
     const country = data?.location?.country || '';
     const region = data?.location?.region || '';
@@ -18,6 +16,7 @@ export const Header = () => {
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
     }
+
     const handlerButtonClick = () => {
         if (inputValue !== '') {
             setNameCity(inputValue)
@@ -52,7 +51,6 @@ export const Header = () => {
                 </div>
                 <h3 className={theme === 'white' ? 'placeLocationInfo' : 'placeLocationInfo-dark'}>{country} {region} {nameCity}</h3>
             </div>
-
         </header>
     )
 }
