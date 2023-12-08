@@ -1,0 +1,71 @@
+.container-about-dark {
+    background-color: gray;
+    min-height: 90vh;
+}
+
+.container-about-winter {
+    background-image: url('../../assets/winter_vector.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 90vh;
+}
+
+.container-about-spring {
+    background-image: url('../../assets/spring_vector.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 90vh;
+}
+
+.container-about-summer {
+    background-image: url('../../assets/summer_vector.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 90vh;
+}
+
+.container-about-autumn {
+    background-image: url('../../assets/autumn_vector.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 90vh;
+}
+
+.about-block {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.472);
+    padding: 30px;
+    margin:  40px;
+    border-radius: 20px;
+}
+
+.about-h2 {
+    text-align: center;
+    font-style: italic;
+    color: rgb(255, 98, 0);
+    text-shadow: 2px 2px 4px rgb(7, 7, 7);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 50px;
+}
+
+.about-h2::first-letter {
+    text-transform: uppercase;
+    color: rgb(252, 54, 54);
+}
+
+.about-text span > b{
+    color: rgb(227, 191, 191);
+    text-shadow: 0 0 3px black;
+}
+
+.about-text p{
+    color: white;
+}
+
+.highlighted{
+    color: rgb(103, 192, 255);
+    text-shadow: 0 0 3px black;
+}
+

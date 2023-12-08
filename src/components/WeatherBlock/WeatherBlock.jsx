@@ -40,10 +40,12 @@ export const WeatherBlock = () => {
         setChangeNumberDays(3)
         changeFocus(0)
     }
+
     const changeShowFiveDays = () => {
         setChangeNumberDays(5)
         changeFocus(0)
     }
+    
     const changeShowSevenDays = () => {
         setChangeNumberDays(7)
     }

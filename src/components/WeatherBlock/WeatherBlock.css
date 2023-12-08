@@ -1,6 +1,8 @@
-main{
-    margin: 10px 10px 10px 0;
+main {
+    margin-top: 10px;
+    margin-right: 10px;
 }
+
 .block-cards {
     display: flex;
     flex-wrap: wrap;
@@ -227,8 +229,8 @@ main{
 }
 
 @media (max-width: 992px) {
-    main{
-        margin: 10px 0 0 0;
+    main {
+       margin-right: 0;
     }
 
     [class^="cards"] {
@@ -237,7 +239,7 @@ main{
     }
 
     .weather-info-block {
-        min-height: 392px;
+        min-height: 370px;
     }
 }
 
@@ -250,6 +252,7 @@ main{
 @media (max-width: 540px) {
     .block-cards {
         justify-content: center;
+        padding-bottom: 30px;
     }
 
     [class^="cards"] {
