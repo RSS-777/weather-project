@@ -8,7 +8,7 @@ const Table = () => {
     const { theme } = useContext(ThemeContext);
 
     if (!data || !data.forecast || !data.forecast.forecastday || !data.forecast.forecastday[0].hour) {
-        return <p>Loading...</p>
+        return <p className='loading-table'>Loading...</p>
     };
 
     const dayData = data.forecast.forecastday[indexCard];
