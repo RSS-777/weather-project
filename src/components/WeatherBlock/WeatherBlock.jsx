@@ -79,7 +79,7 @@ export const WeatherBlock = () => {
                     ))}
                 </div>
                 <div className="weather-info-block">
-                    < WeatherTable />
+                    <WeatherTable />
                 </div>
             </main>
         )
