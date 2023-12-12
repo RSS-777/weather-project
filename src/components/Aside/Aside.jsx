@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { ThemeContext } from '../../context/themeContext';
+import { ThemeContext } from '../../context/ThemeContext';
 import { date } from '../../utils/date';
 import './Aside.css';
 

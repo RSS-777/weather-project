@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { WeatherContext } from '../../context/weatherContext';
-import { ThemeContext } from '../../context/themeContext';
+import { WeatherContext } from '../../context/WeatherContext';
+import { ThemeContext } from '../../context/ThemeContext';
 import './WeatherTable.css';
 
 const Table = () => {
