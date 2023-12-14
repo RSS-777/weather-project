@@ -13,7 +13,7 @@ function App() {
   return (
     <ThemeProvider>
       <WeatherProvider>
-        <Router>
+        <Router basename='/React_Home_Work'>
           <div className='wrapper-app'>
             <Routes>
               <Route index element={<Home />} />
