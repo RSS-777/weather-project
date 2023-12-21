@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ThemeContext } from '../../context/themeContext';
+import { NavLink } from 'react-router-dom';
+import { ThemeContext } from '../../context/ThemeContext';
 import { date } from '../../utils/date';
 import './Footer.css';
 
@@ -17,9 +17,9 @@ export const Footer = () => {
       <div className={theme === 'white' ? `footer-content-${stateSeason}` : 'footer-content-dark'}>
         <nav>
           <ul className={theme === 'white' ? `footer-list-${date.season}` : 'footer-list-dark'}>
-            <li><Link to="/">На головну</Link></li>
-            <li><Link to="/about">Про нас</Link></li>
-            <li><Link to="/contact">Контакти</Link></li>
+            <li><NavLink to="/">На головну</NavLink></li>
+            <li><NavLink to="/about">Про нас</NavLink></li>
+            <li><NavLink to="/contact">Контакти</NavLink></li>
           </ul>
         </nav>
         <p className='author'>© 2023 RSS-777 "Погода" </p>

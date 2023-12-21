@@ -1,6 +1,7 @@
 main {
     margin-top: 10px;
     margin-right: 10px;
+    font-style: italic;
 }
 
 .block-cards {
@@ -20,11 +21,12 @@ main {
     max-width: 200px;
     height: 250px;
     background-color: rgba(2, 2, 2, 0.712);
-    box-shadow: 2px 2px 5px 1px rgb(215, 125, 125);
+    box-shadow: 0 0 5px 2px rgb(215, 125, 125);
     color: rgb(255, 191, 0);
     text-align: center;
     user-select: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .day-week {
@@ -49,7 +51,7 @@ main {
 
 .today {
     position: absolute;
-    left: 19px;
+    left: 18px;
     color: red;
     font-size: 9px;
     padding: 0 1px;
@@ -109,11 +111,11 @@ main {
 }
 
 .weather-info-block {
-    margin: 0 10px 0 10px;
-    min-height: 400px;
+    margin: 0 10px 20px 10px;
+    min-height: 300px;
     color: white;
     background-color: rgba(2, 2, 2, 0.712);
-    box-shadow: 2px 2px 5px 1px rgb(215, 125, 125);
+    box-shadow: 0 0 5px 1px rgb(215, 125, 125);
 }
 
 .loading {
@@ -170,7 +172,7 @@ main {
 }
 
 .active-block {
-    box-shadow: 0 0 5px 2px rgb(214, 0, 0);
+    outline: 2px solid rgb(255, 38, 0);
 }
 
 .season-dark {

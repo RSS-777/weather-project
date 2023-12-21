@@ -10,7 +10,8 @@ export const WeatherProvider = ({ children }) => {
     useEffect(() => {
         async function loadData() {
             try {
-                const weatherApi = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=52d9f961032045a097064443231911&q=${nameCity}&days=7&lang=uk`)
+                const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
+                const weatherApi = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${nameCity}&days=7&lang=uk`)
                 const resp = await weatherApi.json()
                 setData(resp)
             } catch (error) {

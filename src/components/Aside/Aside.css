@@ -44,7 +44,13 @@ aside {
     height: 180px;
     background-color: white;
     box-shadow: 2px 2px 8px black;
+    overflow: hidden;
 }
+
+.advertising  img {
+   width: 100%;
+   max-width: 100%;
+ }
 
 @media (max-width: 992px) {
     aside {

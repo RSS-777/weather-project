@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
-import { WeatherContext } from '../../context/weatherContext';
+import { WeatherContext } from '../../context/WeatherContext';
 import WeatherTable from '../WeatherTable/WeatherTable';
 import { date } from '../../utils/date';
-import { ThemeContext } from '../../context/themeContext';
+import { ThemeContext } from '../../context/ThemeContext';
 import './WeatherBlock.css';
 
 export const WeatherBlock = () => {
@@ -79,7 +79,7 @@ export const WeatherBlock = () => {
                     ))}
                 </div>
                 <div className="weather-info-block">
-                    < WeatherTable />
+                    <WeatherTable />
                 </div>
             </main>
         )

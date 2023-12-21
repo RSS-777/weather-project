@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik'
-import { ThemeContext } from '../context/themeContext';
+import { ThemeContext } from '../context/ThemeContext';
 import { date } from '../utils/date';
 
 export const ContactForm = () => {

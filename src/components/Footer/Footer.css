@@ -33,30 +33,28 @@ ul>li {
 
 ul>li>a {
     text-decoration: none;
+    text-shadow: 1px 1px 4px white;
 }
 
 ul>li>a:hover {
-    color: rgb(195, 0, 0);
+    border-bottom: 1px solid rgb(92, 7, 7);
+    padding-bottom: 5px;
 }
 
 .footer-list-winter a {
     color: blue;
-    text-shadow: 1px 1px 4px black;
 }
 
 .footer-list-spring a {
     color: blue;
-    text-shadow: 1px 1px 4px black;
 }
 
 .footer-list-summer a {
     color: white;
-    text-shadow: 1px 1px 4px black;
 }
 
 .footer-list-autumn a {
     color: blue;
-    text-shadow: 1px 1px 4px black;
 }
 
 .author {
@@ -75,7 +73,12 @@ ul>li>a:hover {
 }
 
 .footer-list-dark>li>a:hover {
-    color: yellow;
+    border-bottom: 1px solid rgb(92, 7, 7);
+    padding-bottom: 5px;
+}
+
+.active {
+    color: rgb(92, 7, 7) !important;
 }
 
 @media (max-width: 992px) {
@@ -126,7 +129,4 @@ ul>li>a:hover {
         color: white;
     }
 
-    .footer-list-autumn a {
-        text-shadow: 1px 1px 4px rgb(255, 255, 255);
-    }
 }

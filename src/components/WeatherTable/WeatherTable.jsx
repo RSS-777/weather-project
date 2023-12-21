@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { WeatherContext } from '../../context/weatherContext';
-import { ThemeContext } from '../../context/themeContext';
+import { WeatherContext } from '../../context/WeatherContext';
+import { ThemeContext } from '../../context/ThemeContext';
 import './WeatherTable.css';
 
 const Table = () => {
@@ -8,7 +8,7 @@ const Table = () => {
     const { theme } = useContext(ThemeContext);
 
     if (!data || !data.forecast || !data.forecast.forecastday || !data.forecast.forecastday[0].hour) {
-        return <p>Loading...</p>
+        return <p className='loading-table'>Loading...</p>
     };
 
     const dayData = data.forecast.forecastday[indexCard];
