@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { ThemeContext } from '../../context/ThemeContext';
+import { useSelector } from 'react-redux';
 import { date } from '../../utils/date';
 import './About.css';
 
 export const About = () => {
     const [stateSeason, setStateSeason] = useState('');
-    const { theme } = useContext(ThemeContext);
+    const theme = useSelector((state) => state.theme.value);
 
     useEffect(() => {
         setStateSeason(date.season)

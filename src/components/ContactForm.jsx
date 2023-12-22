@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik'
-import { ThemeContext } from '../context/ThemeContext';
+import { useSelector } from 'react-redux';
 import { date } from '../utils/date';
 
 export const ContactForm = () => {
     const [stateSeason, setStateSeason] = useState('');
-    const { theme } = useContext(ThemeContext);
+    const theme = useSelector((state) => state.theme.value);
 
     useEffect(() => {
         setStateSeason(date.season)

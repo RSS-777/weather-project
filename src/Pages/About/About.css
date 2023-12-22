@@ -68,3 +68,16 @@
     color: rgb(103, 192, 255);
     text-shadow: 0 0 3px black;
 }
+
+@media (max-width: 540px) {
+    .about-h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 45px;
+    }
+
+    .about-block {
+        padding: 30px;
+        margin: 20px;
+    }
+}

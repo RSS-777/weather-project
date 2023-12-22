@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { ThemeContext } from '../../context/ThemeContext';
+import { useSelector } from 'react-redux';
 import { date } from '../../utils/date';
 import './Contact.css';
 import { ContactForm } from '../../components/ContactForm';
 
 export const Contact = () => {
     const [stateSeason, setStateSeason] = useState('');
-    const { theme } = useContext(ThemeContext);
+    const theme = useSelector((state) => state.theme.value);
 
     useEffect(() => {
         setStateSeason(date.season)
