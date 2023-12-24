@@ -8,11 +8,37 @@ const Table = () => {
     const theme = useSelector((state) => state.theme.value);
 
     if (!data || !data.forecast || !data.forecast.forecastday || !data.forecast.forecastday[0].hour) {
-        return <p className='loading-table'>Loading...</p>
+        return <p className='loading-table'>Loading...</p>;
     };
 
     const dayData = data.forecast.forecastday[indexCard];
     const hours = ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00'];
+    console.log(dayData)
+    const renderDataCell = (property) => {
+        return hours.map((hour, index) => {
+            const hourData = dayData.hour.find(item => item.time === `${dayData.date} ${hour}`);
+            return (
+                <td key={index}>
+                    {hourData
+                        ? property ? property(hourData) : <span>Немає даних</span>
+                        : <span>Немає даних</span>
+                    }
+                </td>
+            );
+        });
+    };
+
+    const tableRows = [
+        { title: 'Хмарність', property: (hourData) => <img src={hourData.condition.icon} alt='Іконка погоди' /> },
+        { title: 'Температура', property: (hourData) => hourData.temp_c },
+        { title: 'Швидкість вітру км/год', property: (hourData) => hourData.wind_kph },
+        { title: 'Напрямок вітру', property: (hourData) => hourData.wind_dir },
+        { title: 'Видимість', property: (hourData) => hourData.vis_km },
+        { title: 'Атмосферний тиск', property: (hourData) => hourData.pressure_in },
+        { title: 'Вологість повітря', property: (hourData) => hourData.humidity },
+        { title: 'Відчутність тепла', property: (hourData) => hourData.feelslike_c },
+        { title: 'Погодні умови', property: (hourData) => hourData.condition.text },
+    ];
 
     return (
         <table>
@@ -25,135 +51,15 @@ const Table = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td className='title-table'>Хмарність</td>
-                    {hours.map((hour, index) => {
-                        const hourData = dayData.hour.find(item => item.time === `${dayData.date} ${hour}`)
-                        return (
-                            <td key={index}>
-                                {hourData
-                                    ? <img src={hourData.condition.icon} alt='Іконка погди' />
-                                    : <span>Немає даних</span>
-                                }
-                            </td>
-                        )
-                    })}
-                </tr>
-                <tr>
-                    <td className='title-table'>Teмпература</td>
-                    {hours.map((hour, index) => {
-                        const hourData = dayData.hour.find(item => item.time === `${dayData.date} ${hour}`)
-                        return (
-                            <td key={index}>
-                                {hourData
-                                    ? hourData.temp_c
-                                    : <span>Немає даних</span>
-                                }
-                            </td>
-                        )
-                    })}
-                </tr>
-                <tr>
-                    <td className='title-table'>Швидкість вітру км/час</td>
-                    {hours.map((hour, index) => {
-                        const hourData = dayData.hour.find(item => item.time === `${dayData.date} ${hour}`)
-                        return (
-                            <td key={index}>
-                                {hourData
-                                    ? hourData.wind_kph
-                                    : <span>Немає даних</span>
-                                }
-                            </td>
-                        )
-                    })}
-                </tr>
-                <tr>
-                    <td className='title-table'>Напрямок вітру</td>
-                    {hours.map((hour, index) => {
-                        const hourData = dayData.hour.find(item => item.time === `${dayData.date} ${hour}`)
-                        return (
-                            <td key={index}>
-                                {hourData
-                                    ? hourData.wind_dir
-                                    : <span>Немає даних</span>
-                                }
-                            </td>
-                        )
-                    })}
-                </tr>
-                <tr>
-                    <td className='title-table'>Видимість</td>
-                    {hours.map((hour, index) => {
-                        const hourData = dayData.hour.find(item => item.time === `${dayData.date} ${hour}`)
-                        return (
-                            <td key={index}>
-                                {hourData
-                                    ? hourData.vis_km
-                                    : <span>Немає даних</span>
-                                }
-                            </td>
-                        )
-                    })}
-                </tr>
-                <tr>
-                    <td className='title-table'>Атмосферний тиск</td>
-                    {hours.map((hour, index) => {
-                        const hourData = dayData.hour.find(item => item.time === `${dayData.date} ${hour}`)
-                        return (
-                            <td key={index}>
-                                {hourData
-                                    ? hourData.pressure_in
-                                    : <span>Немає даних</span>
-                                }
-                            </td>
-                        )
-                    })}
-                </tr>
-                <tr>
-                    <td className='title-table'>Вологість повітря</td>
-                    {hours.map((hour, index) => {
-                        const hourData = dayData.hour.find(item => item.time === `${dayData.date} ${hour}`)
-                        return (
-                            <td key={index}>
-                                {hourData
-                                    ? hourData.humidity
-                                    : <span>Немає даних</span>
-                                }
-                            </td>
-                        )
-                    })}
-                </tr>
-                <tr>
-                    <td className='title-table'>Відчутність тепла</td>
-                    {hours.map((hour, index) => {
-                        const hourData = dayData.hour.find(item => item.time === `${dayData.date} ${hour}`)
-                        return (
-                            <td key={index}>
-                                {hourData
-                                    ? hourData.feelslike_c
-                                    : <span>Немає даних</span>
-                                }
-                            </td>
-                        )
-                    })}
-                </tr>
-                <tr>
-                    <td className='title-table'>Погодні умови</td>
-                    {hours.map((hour, index) => {
-                        const hourData = dayData.hour.find(item => item.time === `${dayData.date} ${hour}`)
-                        return (
-                            <td key={index}>
-                                {hourData
-                                    ? hourData.condition.text
-                                    : <span>Немає даних</span>
-                                }
-                            </td>
-                        )
-                    })}
-                </tr>
+                {tableRows.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                        <td className='title-table'>{row.title}</td>
+                        {renderDataCell(row.property)}
+                    </tr>
+                ))}
             </tbody>
         </table>
-    )
+    );
 };
 
 export default Table;
