@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { WeatherContext } from '../../context/WeatherContext';
 import { useSelector } from 'react-redux';
 import './WeatherTable.css';
@@ -13,14 +13,14 @@ const Table = () => {
 
     const dayData = data.forecast.forecastday[indexCard];
     const hours = ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00'];
-    console.log(dayData)
+
     const renderDataCell = (property) => {
         return hours.map((hour, index) => {
             const hourData = dayData.hour.find(item => item.time === `${dayData.date} ${hour}`);
             return (
                 <td key={index}>
                     {hourData
-                        ? property ? property(hourData) : <span>Немає даних</span>
+                        ? property(hourData)
                         : <span>Немає даних</span>
                     }
                 </td>
@@ -30,7 +30,7 @@ const Table = () => {
 
     const tableRows = [
         { title: 'Хмарність', property: (hourData) => <img src={hourData.condition.icon} alt='Іконка погоди' /> },
-        { title: 'Температура', property: (hourData) => hourData.temp_c },
+        { title: 'Температура \u00B0C', property: (hourData) => hourData.temp_c },
         { title: 'Швидкість вітру км/год', property: (hourData) => hourData.wind_kph },
         { title: 'Напрямок вітру', property: (hourData) => hourData.wind_dir },
         { title: 'Видимість', property: (hourData) => hourData.vis_km },
