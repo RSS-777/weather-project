@@ -2,12 +2,12 @@ import React, { useState, useEffect, useContext, useRef } from 'react';
 import { WeatherContext } from '../../context/WeatherContext';
 import WeatherTable from '../WeatherTable/WeatherTable';
 import { date } from '../../utils/date';
-import { ThemeContext } from '../../context/ThemeContext';
+import { useSelector } from 'react-redux';
 import './WeatherBlock.css';
 
 export const WeatherBlock = () => {
     const { data, setIndexCard } = useContext(WeatherContext);
-    const { theme } = useContext(ThemeContext);
+    const theme = useSelector((state) => state.theme.value);
     const [stateSeason, setStateSeason] = useState('');
     const [changeNumberDays, setChangeNumberDays] = useState(3);
     const refs = useRef([]);

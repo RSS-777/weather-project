@@ -1,10 +1,10 @@
-import { useContext, useState, useEffect } from 'react';
-import { ThemeContext } from '../../context/ThemeContext';
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { date } from '../../utils/date';
 import './Aside.css';
 
 export const Aside = () => {
-    const { theme } = useContext(ThemeContext);
+    const theme = useSelector((state) => state.theme.value);
     const [stateSeason, setStateSeason] = useState('');
 
     useEffect(() => {

@@ -1,11 +1,11 @@
-import { useContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ThemeContext } from '../../context/ThemeContext';
+import { useSelector } from 'react-redux';
 import { date } from '../../utils/date';
 import './Footer.css';
 
 export const Footer = () => {
-  const { theme } = useContext(ThemeContext);
+  const theme = useSelector((state) => state.theme.value);
   const [stateSeason, setStateSeason] = useState('');
 
   useEffect(() => {

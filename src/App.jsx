@@ -6,24 +6,25 @@ import { About } from './Pages/About/About';
 import { NotFoundPage } from './Pages/NotFoundPage/NotFoundPage';
 import { Footer } from './components/Footer/Footer';
 import { WeatherProvider } from './context/WeatherContext';
-import { ThemeProvider } from './context/ThemeContext';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 import './App.css';
 
 function App() {
   return (
-    <ThemeProvider>
-      <WeatherProvider>
-        <div className='wrapper-app'>
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-          <Footer />
-        </div>
-      </WeatherProvider>
-    </ThemeProvider>
+    <Provider store={store}>
+        <WeatherProvider>
+          <div className='wrapper-app'>
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+            <Footer />
+          </div>
+        </WeatherProvider>
+    </Provider>
   )
 };
 
