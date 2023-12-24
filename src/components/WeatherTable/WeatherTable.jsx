@@ -3,7 +3,7 @@ import { WeatherContext } from '../../context/WeatherContext';
 import { useSelector } from 'react-redux';
 import './WeatherTable.css';
 
-const Table = () => {
+export const WeatherTable = () => {
     const { data, indexCard } = useContext(WeatherContext);
     const theme = useSelector((state) => state.theme.value);
 
@@ -61,5 +61,3 @@ const Table = () => {
         </table>
     );
 };
-
-export default Table;

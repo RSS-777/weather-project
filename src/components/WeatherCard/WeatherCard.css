@@ -1,0 +1,87 @@
+.today {
+    position: absolute;
+    left: 0;
+    color: red;
+    font-size: 9px;
+    padding: 0 3px;
+    background-color: white;
+    border-radius: 5px 0 0 0;
+}
+
+.cards {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    min-width: 120px;
+    max-width: 200px;
+    height: 250px;
+    background-color: rgba(2, 2, 2, 0.712);
+    box-shadow: 0 0 5px 2px rgb(215, 125, 125);
+    color: rgb(255, 191, 0);
+    text-align: center;
+    user-select: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.active-block {
+    outline: 2px solid rgb(255, 38, 0);
+    overflow: hidden;
+}
+
+.cards>img {
+    height: 80px;
+    width: 80px;
+    margin-top: -35px;
+}
+
+.day-week {
+    margin-top: 7px;
+    height: 20px;
+}
+
+.day-month {
+    height: 20px;
+    margin-top: -20px;
+}
+
+.temp-day {
+    color: white;
+    font-size: 22px;
+    height: 24px;
+    margin-top: -15px;
+}
+
+.degrees-celsius {
+    display: grid;
+    grid-template-columns: minmax(10px, 60px) minmax(10px, 60px);
+    line-height: 12px;
+    font-size: 14px;
+    margin-top: -5px;
+    padding-right: 10px;
+}
+
+.degrees-max {
+    justify-self: end;
+}
+
+.month {
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 7px;
+}
+
+@media (max-width: 992px) {
+    .cards {
+        min-width: 160px;
+    }
+}
+
+@media (max-width: 540px) {
+    .cards {
+        max-width: 220px;
+    }
+}
