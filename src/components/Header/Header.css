@@ -37,8 +37,8 @@ h1::first-letter {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     height: 40px;
 }
 
@@ -49,7 +49,6 @@ h1::first-letter {
     border-radius: 10px;
     box-shadow: 2px 2px 5px 1px rgb(215, 125, 125);
     padding-left: 10px;
-    margin-left: -10px;
 }
 
 .btn-search-city {
@@ -125,7 +124,6 @@ h1::first-letter {
     border-radius: 10px;
     box-shadow: 2px 2px 5px 1px rgb(215, 125, 125);
     padding-left: 10px;
-    margin-left: -10px;
 }
 
 .btn-search-city-dark {
@@ -174,7 +172,7 @@ h1::first-letter {
     .container-cityNameInput {
         flex-direction: column;
         align-items: start;
-        margin: 0 20px 5px;
+        margin-bottom: 5px;
         height: 60px;
     }
 
@@ -198,10 +196,6 @@ h1::first-letter {
 }
 
 @media (max-width: 540px) {
-    .container-cityNameInput {
-        margin: 0 20px 5px;
-    }
-
     .input-search-city {
         font-size: 18px;
         width: 200px;
