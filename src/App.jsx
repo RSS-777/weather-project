@@ -14,7 +14,7 @@ function App() {
   return (
     <Provider store={store}>
         <WeatherProvider>
-          <div className='wrapper-app'>
+          <div className='wrapper'>
             <Routes>
               <Route index element={<Home />} />
               <Route path="/about" element={<About />} />

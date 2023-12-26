@@ -11,7 +11,7 @@ export const WeatherProvider = ({ children }) => {
         async function loadData() {
             try {
                 const apiKey = import.meta.env.VITE_APP_WEATHER_API_KEY;
-                const weatherApi = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${nameCity}&days=7&lang=uk`)
+                const weatherApi = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${nameCity}&days=7&lang=uk`)
                 const resp = await weatherApi.json()
                 setData(resp)
             } catch (error) {

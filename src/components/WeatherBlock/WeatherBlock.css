@@ -11,81 +11,6 @@ main {
     padding: 10px;
 }
 
-[class^="cards"] {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
-    min-width: 120px;
-    max-width: 200px;
-    height: 250px;
-    background-color: rgba(2, 2, 2, 0.712);
-    box-shadow: 0 0 5px 2px rgb(215, 125, 125);
-    color: rgb(255, 191, 0);
-    text-align: center;
-    user-select: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.day-week {
-    margin-top: 7px;
-    height: 20px;
-}
-
-.day-month {
-    height: 20px;
-    margin-top: -20px;
-}
-
-[class^="cards"]>img {
-    height: 80px;
-    width: 80px;
-    margin-top: -35px;
-}
-
-.cards1 {
-    position: relative;
-}
-
-.today {
-    position: absolute;
-    left: 18px;
-    color: red;
-    font-size: 9px;
-    padding: 0 1px;
-    position: absolute;
-    background-color: white;
-    border-radius: 5px 0 0 0;
-}
-
-.temp-day {
-    color: white;
-    font-size: 22px;
-    height: 24px;
-    margin-top: -15px;
-}
-
-.degrees-celsius {
-    display: grid;
-    grid-template-columns: minmax(10px, 60px) minmax(10px, 60px);
-    line-height: 12px;
-    font-size: 14px;
-    margin-top: -5px;
-    padding-right: 10px;
-}
-
-.degrees-max {
-    justify-self: end;
-}
-
-.month {
-    text-align: center;
-    font-size: 20px;
-    padding-bottom: 7px;
-}
-
 .spring {
     background-image: url('../../assets/spring_vector.jpg');
     background-repeat: no-repeat;
@@ -118,124 +43,14 @@ main {
     box-shadow: 0 0 5px 1px rgb(215, 125, 125);
 }
 
-.loading {
-    position: relative;
-    top: 105px;
-}
-
-.btn-changeShowThree {
-    border-radius: 5px;
-    border: none;
-    color: gray;
-    background-color: rgb(232, 217, 206);
-    box-shadow: 2px 2px 5px 1px rgb(206, 87, 87);
-    margin-left: 10px;
-    margin-top: 5px;
-}
-
-.btn-changeShowThree:hover {
-    cursor: pointer;
-    box-shadow: 2px 2px 5px 1px rgb(98, 72, 0);
-    color: red;
-}
-
-.btn-changeShowFive {
-    border-radius: 5px;
-    border: none;
-    color: gray;
-    background-color: rgb(232, 217, 206);
-    box-shadow: 2px 2px 5px 1px rgb(215, 86, 86);
-    margin-left: 5px;
-    margin-top: 5px;
-}
-
-.btn-changeShowFive:hover {
-    cursor: pointer;
-    box-shadow: 2px 2px 5px 1px rgb(98, 72, 0);
-    color: red;
-}
-
-.btn-changeShowSeven {
-    border-radius: 5px;
-    border: none;
-    color: gray;
-    background-color: rgb(232, 217, 206);
-    box-shadow: 2px 2px 5px 1px rgb(215, 86, 86);
-    margin-left: 5px;
-    margin-top: 5px;
-}
-
-.btn-changeShowSeven:hover {
-    cursor: pointer;
-    box-shadow: 2px 2px 5px 1px rgb(98, 72, 0);
-    color: red;
-}
-
-.active-block {
-    outline: 2px solid rgb(255, 38, 0);
-}
-
 .season-dark {
     background-color: gray;
     background-image: linear-gradient(90deg, gray, rgba(79, 79, 79, 0.312));
 }
 
-.btn-changeShowThree-dark {
-    border-radius: 5px;
-    border: none;
-    color: white;
-    background-color: black;
-    box-shadow: 0 0 5px 1px rgb(206, 87, 87);
-    margin-left: 10px;
-    margin-top: 5px;
-}
-
-.btn-changeShowThree-dark:hover {
-    cursor: pointer;
-    box-shadow: 0 1px 5px 1px rgb(255, 255, 255);
-    color: yellow;
-}
-
-.btn-changeShowFive-dark {
-    border-radius: 5px;
-    border: none;
-    color: white;
-    background-color: black;
-    box-shadow: 0 0 5px 1px rgb(206, 87, 87);
-    margin-left: 5px;
-    margin-top: 5px;
-}
-
-.btn-changeShowFive-dark:hover {
-    cursor: pointer;
-    box-shadow: 0 1px 5px 1px rgb(255, 255, 255);
-    color: yellow;
-}
-
-.btn-changeShowSeven-dark {
-    border-radius: 5px;
-    border: none;
-    color: white;
-    background-color: black;
-    box-shadow: 0 0 5px 1px rgb(206, 87, 87);
-    margin-left: 5px;
-    margin-top: 5px;
-}
-
-.btn-changeShowSeven-dark:hover {
-    cursor: pointer;
-    box-shadow: 0 1px 5px 1px rgb(255, 255, 255);
-    color: yellow;
-}
-
 @media (max-width: 992px) {
     main {
         margin-right: 0;
-    }
-
-    [class^="cards"] {
-        min-width: 180px;
-        max-width: 220px;
     }
 
     .weather-info-block {
@@ -255,19 +70,7 @@ main {
         padding-bottom: 30px;
     }
 
-    [class^="cards"] {
-        flex-grow: 1;
-        min-width: 150px;
-        max-width: 220px;
-    }
-
     .weather-info-block {
         display: none;
-    }
-}
-
-@media (max-width: 362px) {
-    .today {
-        left: 18%;
     }
 }

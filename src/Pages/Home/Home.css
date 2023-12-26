@@ -1,4 +1,4 @@
-.wrapper {
+.content {
     display: grid;
     grid-template: 135px 1fr / 1fr;
 }
@@ -16,7 +16,7 @@
 }
 
 @media (max-width: 768px) {
-    .wrapper {
+    .content {
         display: grid;
         grid-template: auto 1fr / 1fr;
         min-height: 90vh;

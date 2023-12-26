@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useContext, useRef } from 'react';
+import { useState, useEffect, useContext, useRef } from 'react';
 import { WeatherContext } from '../../context/WeatherContext';
-import WeatherTable from '../WeatherTable/WeatherTable';
+import { WeatherTable } from '../WeatherTable/WeatherTable';
+import { WeatherCard } from '../WeatherCard/WeatherCard';
+import { ButtonChangeNumberDay } from '../ButtonChangeNumberDay/ButtonChangeNumberDay'
 import { date } from '../../utils/date';
 import { useSelector } from 'react-redux';
 import './WeatherBlock.css';
@@ -10,31 +12,13 @@ export const WeatherBlock = () => {
     const theme = useSelector((state) => state.theme.value);
     const [stateSeason, setStateSeason] = useState('');
     const [changeNumberDays, setChangeNumberDays] = useState(3);
-    const refs = useRef([]);
+    const [activeCard, setActiveCard] = useState(0)
+    const combinedClasses = `cards active-block`;
 
     const changeFocus = (index) => {
-        const activeElement = refs.current[index];
-        const filteredRefs = refs.current.filter(elem => elem !== null);
-        refs.current = filteredRefs;
-
-        if (!activeElement.classList.contains('active-block')) {
-            refs.current.forEach((elem) => {
-                if (elem !== activeElement && elem.classList.contains('active-block')) {
-                    elem.classList.remove('active-block')
-                }
-            });
-            if (activeElement) {
-                activeElement.classList.toggle('active-block')
-                setIndexCard(index)
-            }
-        }
+        setIndexCard(index)
+        setActiveCard(index)
     };
-
-    useEffect(() => {
-        if (refs.current[0]) {
-            refs.current[0].classList.add('active-block')
-        }
-    }, [])
 
     const changeShowTreeDays = () => {
         setChangeNumberDays(3)
@@ -54,28 +38,37 @@ export const WeatherBlock = () => {
         setStateSeason(date.season)
     }, [])
 
-    const monthName = ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"];
-    const arrNameWeek = ["Неділя", "Понеділок", "Вівторок", "Середа", "Четвер", "П'ятниця", "Субота"];
+    const placeholderDayData = {
+        date_epoch: null,
+        day: {
+            condition: {
+                icon: 'https://i.gifer.com/VAyR.gif'
+            },
+            avgtemp_c: null,
+            mintemp_c: null,
+            maxtemp_c: null
+        },
+    };
 
     if (!data || !data.forecast || !data.forecast.forecastday) {
-        const forecastDays = Array.from({ length: changeNumberDays }, (_, index) => ({ index }));
+        const forecastDays = Array.from({ length: changeNumberDays }, (_, index) => ({ ...placeholderDayData }));
+
         return (
             <main className={theme === 'white' ? stateSeason : 'season-dark'}>
-                <button className={theme === 'white' ? 'btn-changeShowThree' : 'btn-changeShowThree-dark'} onClick={changeShowTreeDays}>3 дні</button>
-                <button className={theme === 'white' ? 'btn-changeShowFive' : 'btn-changeShowFive-dark'} onClick={changeShowFiveDays}>5 днів</button>
-                <button className={theme === 'white' ? 'btn-changeShowSeven' : 'btn-changeShowSeven-dark'} onClick={changeShowSevenDays}>7 днів</button>
-
+                <ButtonChangeNumberDay
+                    changeShowTreeDays={changeShowTreeDays}
+                    changeShowFiveDays={changeShowFiveDays}
+                    changeShowSevenDays={changeShowSevenDays}
+                    theme={theme}
+                />
                 <div className="block-cards">
-                    {forecastDays.map((_, index) => (
-                        <div
-                            className={`cards${index}`}
+                    {forecastDays.map((dayData, index) => (
+                        <WeatherCard
+                            dayData={dayData}
                             key={index}
-                            ref={(elem) => refs.current[index] = elem}
-                            onClick={() => changeFocus(index)}
-                        >
-                            {index === 0 ? <span className='today'>Cьогодні</span> : null}
-                            <img className='loading' src={'https://i.gifer.com/VAyR.gif'} alt="Loading image weather" />
-                        </div>
+                            index={index}
+                            className={`cards`}
+                        />
                     ))}
                 </div>
                 <div className="weather-info-block">
@@ -89,31 +82,21 @@ export const WeatherBlock = () => {
 
     return (
         <main className={theme === 'white' ? stateSeason : 'season-dark'}>
-            <button className={theme === 'white' ? 'btn-changeShowThree' : 'btn-changeShowThree-dark'} onClick={changeShowTreeDays}>3 дні</button>
-            <button className={theme === 'white' ? 'btn-changeShowFive' : 'btn-changeShowFive-dark'} onClick={changeShowFiveDays}>5 днів</button>
-            <button className={theme === 'white' ? 'btn-changeShowSeven' : 'btn-changeShowSeven-dark'} onClick={changeShowSevenDays}>7 днів</button>
-
+            <ButtonChangeNumberDay
+                changeShowTreeDays={changeShowTreeDays}
+                changeShowFiveDays={changeShowFiveDays}
+                changeShowSevenDays={changeShowSevenDays}
+                theme={theme}
+            />
             <div className="block-cards">
                 {forecastDays.map((dayData, index) => (
-                    <div
-                        className={`cards${index}`}
+                    <WeatherCard
+                        dayData={dayData}
                         key={index}
-                        ref={(elem) => refs.current[index] = elem}
+                        index={index}
                         onClick={() => changeFocus(index)}
-                    >
-                        {index === 0 ? <span className='today'>Cьогодні</span> : null}
-                        <span className="day-week">{arrNameWeek[new Date(dayData.date_epoch * 1000).getDay()]}</span>
-                        <h3 className='day-month'>{new Date(dayData.date_epoch * 1000).getDate()}</h3>
-                        <img src={dayData.day.condition.icon} alt="Image weather" />
-                        <div className="temp-day">{dayData.day.avgtemp_c}&deg;C</div>
-                        <div>
-                            <div className="degrees-celsius">
-                                <div className="degrees-min">Min<br /><span>{dayData.day.mintemp_c}</span><sup>&deg;</sup></div>
-                                <div className="degrees-max">Max<br /><span>{dayData.day.maxtemp_c}</span><sup>&deg;</sup></div>
-                            </div>
-                        </div>
-                        <div className='month'>{monthName[dayData.date.split('-')[1] - 1]}</div>
-                    </div>
+                        className={activeCard === index ? combinedClasses : `cards`}
+                    />
                 ))}
             </div>
             <div className="weather-info-block">

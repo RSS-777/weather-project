@@ -5,7 +5,7 @@ import './Home.css';
 
 export const Home = () => {
     return (
-        <div className="wrapper">
+        <div className="content">
             <Header />
             <div className="main-container">
                 <WeatherBlock />

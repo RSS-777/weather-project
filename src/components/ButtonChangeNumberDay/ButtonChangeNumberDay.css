@@ -1,0 +1,95 @@
+.btn-changeShowThree {
+    border-radius: 5px;
+    border: none;
+    color: gray;
+    background-color: rgb(232, 217, 206);
+    box-shadow: 2px 2px 5px 1px rgb(206, 87, 87);
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.btn-changeShowThree:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 5px 1px rgb(98, 72, 0);
+    color: red;
+}
+
+.btn-changeShowFive {
+    border-radius: 5px;
+    border: none;
+    color: gray;
+    background-color: rgb(232, 217, 206);
+    box-shadow: 2px 2px 5px 1px rgb(215, 86, 86);
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.btn-changeShowFive:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 5px 1px rgb(98, 72, 0);
+    color: red;
+}
+
+.btn-changeShowSeven {
+    border-radius: 5px;
+    border: none;
+    color: gray;
+    background-color: rgb(232, 217, 206);
+    box-shadow: 2px 2px 5px 1px rgb(215, 86, 86);
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.btn-changeShowSeven:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 5px 1px rgb(98, 72, 0);
+    color: red;
+}
+
+.btn-changeShowThree-dark {
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: black;
+    box-shadow: 0 0 5px 1px rgb(206, 87, 87);
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.btn-changeShowThree-dark:hover {
+    cursor: pointer;
+    box-shadow: 0 1px 5px 1px rgb(255, 255, 255);
+    color: yellow;
+}
+
+.btn-changeShowFive-dark {
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: black;
+    box-shadow: 0 0 5px 1px rgb(206, 87, 87);
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.btn-changeShowFive-dark:hover {
+    cursor: pointer;
+    box-shadow: 0 1px 5px 1px rgb(255, 255, 255);
+    color: yellow;
+}
+
+.btn-changeShowSeven-dark {
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: black;
+    box-shadow: 0 0 5px 1px rgb(206, 87, 87);
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.btn-changeShowSeven-dark:hover {
+    cursor: pointer;
+    box-shadow: 0 1px 5px 1px rgb(255, 255, 255);
+    color: yellow;
+}
