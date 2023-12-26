@@ -55,6 +55,10 @@
     color: rgb(252, 54, 54);
 }
 
+.contact-info {
+    margin-top: 20px;
+}
+
 .contact-info span>b {
     color: rgb(227, 191, 191);
     text-shadow: 0 0 3px black;
@@ -68,6 +72,10 @@
     color: rgb(103, 192, 255);
     text-shadow: 0 0 3px black;
     margin-right: 10px;
+}
+
+.contact-info-form {
+    margin-top: 20px;
 }
 
 .contact-info-form span>b {

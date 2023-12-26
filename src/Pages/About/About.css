@@ -55,6 +55,10 @@
     color: rgb(252, 54, 54);
 }
 
+.about-text {
+    margin-top: 20px;
+}
+
 .about-text span>b {
     color: rgb(227, 191, 191);
     text-shadow: 0 0 3px black;
