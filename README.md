@@ -20,10 +20,10 @@ ___
 
 ___
 ### Screenshot
-<div style="display: flex; justify-content: space-between;">
-    <img src="./public/screenshots/pc.png" width="50%">
-    <img src="./public/screenshots/netbook.png" height="180px"> 
-    <img src="./public/screenshots/modile1.png" height="180px">
+<div style="display: flex; gap: 8px">
+    <img src="./public/screenshots/pc.png" width="300px" height="180px">
+    <img src="./public/screenshots/netbook.png" width="200px" height="180px"> 
+    <img src="./public/screenshots/modile1.png" width="100px" height="180px">
 </div>
 <br>
 <div style="display: flex;">
