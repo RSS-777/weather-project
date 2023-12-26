@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { useSelector } from 'react-redux';
-import { date } from '../utils/date';
+import { date } from '../../utils/date';
+import './ContactForm.css';
 
 export const ContactForm = () => {
     const [stateSeason, setStateSeason] = useState('');
