@@ -2,8 +2,8 @@
     position: relative;
     border-radius: 20px;
     max-width: 320px;
-    height: 240px;
-    margin-top: 10px;
+    height: 250px;
+    margin-top: 20px;
     padding: 10px;
     background-color: rgb(201, 201, 201);
     box-shadow: 2px 2px 8px 1px black;
@@ -13,8 +13,8 @@
     position: relative;
     border-radius: 20px;
     max-width: 320px;
-    height: 240px;
-    margin-top: 10px;
+    height: 250px;
+    margin-top: 20px;
     padding: 10px;
     background-color: #B8CCE5;
     box-shadow: 2px 2px 8px 1px black;
@@ -24,8 +24,8 @@
     position: relative;
     border-radius: 20px;
     max-width: 320px;
-    height: 240px;
-    margin-top: 10px;
+    height: 250px;
+    margin-top: 20px;
     padding: 10px;
     background-color: #C4E2AF;
     box-shadow: 2px 2px 8px 1px black;
@@ -35,8 +35,8 @@
     position: relative;
     border-radius: 20px;
     max-width: 320px;
-    height: 240px;
-    margin-top: 10px;
+    height: 250px;
+    margin-top: 20px;
     padding: 10px;
     background-color: #B2E1F5;
     box-shadow: 2px 2px 8px 1px black;
@@ -46,8 +46,8 @@
     position: relative;
     border-radius: 20px;
     max-width: 320px;
-    height: 240px;
-    margin-top: 10px;
+    height: 250px;
+    margin-top: 20px;
     padding: 10px;
     background-color: #FFF6E3;
     box-shadow: 2px 2px 8px 1px black;
@@ -94,7 +94,7 @@
 .textarea {
     display: flex;
     flex-direction: column;
-    margin: 0 10px 12px 10px;
+    margin: 0 10px 0 10px;
     color: rgb(125, 80, 80);
     font-weight: 600;
 }
@@ -110,6 +110,7 @@
 .btn-form {
     position: absolute;
     right: 20px;
+    margin-top: 5px;
     color: rgb(125, 80, 80);
     background-color: rgb(218, 218, 218);
     box-shadow: 1px 1px 5px 0 black;
@@ -120,24 +121,36 @@
 
 .btn-form:hover {
     box-shadow: 0 0 3px 0 black;
-    background-color: rgb(202, 202, 202);
+    background-color: rgb(185, 185, 185);
     color: #e94200;
     cursor: pointer;
 }
 
-.form-dark .btn-form {
-    color: rgb(112, 60, 60);
-    background-color: rgb(159, 159, 159);
+.submited-form-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.938);
+    font-size: 20px;
+    color: white;
 }
 
-.form-dark .btn-form:hover {
-    color: #d85300;
-    background-color: rgb(190, 190, 190);
-    cursor: pointer;
+.submited-form-message p {
+    padding: 20px;
 }
 
 @media (max-width: 540px) {
     #name {
         margin-left: 17px;
+    }
+
+    .submited-form-message {
+        text-align: center;
     }
 }

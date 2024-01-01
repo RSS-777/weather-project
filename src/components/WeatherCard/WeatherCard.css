@@ -84,4 +84,8 @@
     .cards {
         max-width: 220px;
     }
+
+    .active-block {
+        outline: none;
+    }
 }

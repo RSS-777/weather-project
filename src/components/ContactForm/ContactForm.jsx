@@ -6,11 +6,19 @@ import './ContactForm.css';
 
 export const ContactForm = () => {
     const [stateSeason, setStateSeason] = useState('');
+    const [isFormSubmitted, setIsFormSubmitted] = useState('')
     const theme = useSelector((state) => state.theme.value);
 
     useEffect(() => {
         setStateSeason(date.season)
     }, [])
+
+    const FormSubmitted = () => {
+        setIsFormSubmitted('submited-form-message')
+        setTimeout(() => {
+            setIsFormSubmitted('')
+        }, 2000)
+    }
 
     const validate = (values) => {
         const errors = {};
@@ -27,6 +35,12 @@ export const ContactForm = () => {
             errors.email = "Невірний формат email адреси"
         }
 
+        if (!values.message) {
+            errors.message = "Поле не може бути пустим"
+        } else if (values.message.length < 10) {
+            errors.message = 'Повідомлення повинно бути довшим за 10 символів'
+        }
+        
         return errors
     };
 
@@ -35,6 +49,7 @@ export const ContactForm = () => {
             initialValues={{ name: '', email: '', message: '' }}
             onSubmit={(values, formikBag) => {
                 formikBag.resetForm()
+                FormSubmitted()
             }}
             validate={validate}
         >
@@ -59,7 +74,13 @@ export const ContactForm = () => {
                             <label htmlFor="message">Повідомлення:</label>
                             <Field as='textarea' name='message' id='message' />
                         </div>
+                        <div className="error-message">
+                            <ErrorMessage name='message' component={'div'} />
+                        </div>
                         <button type='submit' className='btn-form'>Відправити</button>
+                        <div className={isFormSubmitted}>
+                            {isFormSubmitted && <p>Ваша форма успішно відправлена</p>}
+                        </div>
                     </Form>
                 )
             }}
