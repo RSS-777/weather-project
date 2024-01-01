@@ -6,7 +6,7 @@ import './WeatherTable.css';
 export const WeatherTable = () => {
     const { data, indexCard } = useContext(WeatherContext);
     const theme = useSelector((state) => state.theme.value);
-
+ 
     if (!data || !data.forecast || !data.forecast.forecastday || !data.forecast.forecastday[0].hour) {
         return <p className='loading-table'>Loading...</p>;
     };

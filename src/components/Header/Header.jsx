@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeTheme } from '../../store/theme/themeSlice';
 import { WeatherContext } from '../../context/WeatherContext';
@@ -10,7 +10,6 @@ export const Header = () => {
     const { data, setNameCity } = useContext(WeatherContext);
     const theme = useSelector((state) => state.theme.value);
     const dispatch = useDispatch();
-
     const [stateSeason, setStateSeason] = useState('');
     const nameCity = data?.location?.name || 'Місцезнаходження чи назва недоступні';
     const country = data?.location?.country || '';
@@ -31,7 +30,7 @@ export const Header = () => {
         const newTheme = theme === 'white' ? 'dark' : 'white';
         dispatch(changeTheme(newTheme))
     }
-  
+
     useEffect(() => {
         setStateSeason(date.season)
     }, [])

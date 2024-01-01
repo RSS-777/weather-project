@@ -5,7 +5,7 @@
 # Basic functions
 * **Weather information**: The application provides the ability to view the current weather, forecast for the next few days, temperature, humidity and other weather parameters for selected locations.
 * **Dynamic themes**: This app has 4 themes that automatically change depending on the season, as well as a dark mode for comfortable use at night or in low light conditions.
-* **Language extension**: Provides the ability to search in different languages.
+* **Language extension**: The api provides the ability to search in different languages.(unfortunately, except for Ukrainian)
 * **Convenient interface in Ukrainian**: Optimized for the Ukrainian audience will make use more comfortable.
 
 
