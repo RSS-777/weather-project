@@ -1,6 +1,9 @@
+import { useSelector } from 'react-redux';
 import './ButtonChangeNumberDay.css';
 
-export const ButtonChangeNumberDay = ({ changeShowTreeDays, changeShowFiveDays, changeShowSevenDays, theme }) => {
+export const ButtonChangeNumberDay = ({ changeShowTreeDays, changeShowFiveDays, changeShowSevenDays }) => {
+    const theme = useSelector((state) => state.theme.value);
+
     return (
         <>
             <button

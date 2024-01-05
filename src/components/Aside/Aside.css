@@ -47,11 +47,11 @@ aside {
 }
 
 [class^='advertising-block'] img {
-   width: 100%;
-   max-width: 100%;
- }
+    width: 100%;
+    max-width: 100%;
+}
 
- .advertising-block {
+.advertising-block {
     background-color: #efe0f6;
 }
 

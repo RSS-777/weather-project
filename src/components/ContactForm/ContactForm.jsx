@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { useSelector } from 'react-redux';
 import { date } from '../../utils/date';
@@ -40,7 +40,7 @@ export const ContactForm = () => {
         } else if (values.message.length < 10) {
             errors.message = 'Повідомлення повинно бути довшим за 10 символів'
         }
-        
+
         return errors
     };
 
@@ -53,7 +53,7 @@ export const ContactForm = () => {
             }}
             validate={validate}
         >
-            {(props) => {
+            {() => {
                 return (
                     <Form className={theme === 'white' ? `form-${stateSeason}` : 'form-dark'}>
                         <div className="name-input">

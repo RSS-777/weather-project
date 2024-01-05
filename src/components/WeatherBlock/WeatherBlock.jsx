@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, useRef } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { WeatherContext } from '../../context/WeatherContext';
 import { WeatherTable } from '../WeatherTable/WeatherTable';
 import { WeatherCard } from '../WeatherCard/WeatherCard';
@@ -51,7 +51,7 @@ export const WeatherBlock = () => {
     };
 
     if (!data || !data.forecast || !data.forecast.forecastday) {
-        const forecastDays = Array.from({ length: changeNumberDays }, (_, index) => ({ ...placeholderDayData }));
+        const forecastDays = Array.from({ length: changeNumberDays }, () => ({ ...placeholderDayData }));
 
         return (
             <main className={theme === 'white' ? stateSeason : 'season-dark'}>
@@ -59,7 +59,6 @@ export const WeatherBlock = () => {
                     changeShowTreeDays={changeShowTreeDays}
                     changeShowFiveDays={changeShowFiveDays}
                     changeShowSevenDays={changeShowSevenDays}
-                    theme={theme}
                 />
                 <div className="block-cards">
                     {forecastDays.map((dayData, index) => (
@@ -86,7 +85,6 @@ export const WeatherBlock = () => {
                 changeShowTreeDays={changeShowTreeDays}
                 changeShowFiveDays={changeShowFiveDays}
                 changeShowSevenDays={changeShowSevenDays}
-                theme={theme}
             />
             <div className="block-cards">
                 {forecastDays.map((dayData, index) => (
