@@ -1,34 +1,25 @@
-import { useState, useEffect, useContext } from 'react';
-import { WeatherContext } from '../../context/WeatherContext';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setIndexCard } from '../../store/weather/weatherSlice';
 import { WeatherTable } from '../WeatherTable/WeatherTable';
 import { WeatherCard } from '../WeatherCard/WeatherCard';
 import { ButtonChangeNumberDay } from '../ButtonChangeNumberDay/ButtonChangeNumberDay'
 import { date } from '../../utils/date';
-import { useSelector } from 'react-redux';
 import './WeatherBlock.css';
 
-const placeholderDayData = {
-    date_epoch: null,
-    day: {
-        condition: {
-            icon: 'https://i.gifer.com/VAyR.gif'
-        },
-        avgtemp_c: null,
-        mintemp_c: null,
-        maxtemp_c: null
-    },
-};
-
 export const WeatherBlock = () => {
-    const { data, setIndexCard } = useContext(WeatherContext);
+    const dispatch = useDispatch();
+    const data = useSelector((state) => state.weather.data);
     const theme = useSelector((state) => state.theme.value);
+    const status = useSelector((state) => state.weather.status);
+    const error = useSelector((state) => state.weather.error);
     const [stateSeason, setStateSeason] = useState('');
     const [changeNumberDays, setChangeNumberDays] = useState(3);
     const [activeCard, setActiveCard] = useState(0)
     const combinedClasses = `cards active-block`;
 
     const changeFocus = (index) => {
-        setIndexCard(index)
+        dispatch(setIndexCard(index))
         setActiveCard(index)
     };
 
@@ -51,55 +42,43 @@ export const WeatherBlock = () => {
         setStateSeason(currentSeason.season)
     }, [])
 
-    if (!data || !data.forecast || !data.forecast.forecastday) {
-        const forecastDays = Array.from({ length: changeNumberDays }, () => ({ ...placeholderDayData }));
-
-        return (
-            <main className={theme === 'white' ? stateSeason : 'season-dark'}>
-                <ButtonChangeNumberDay
-                    changeShowTreeDays={changeShowTreeDays}
-                    changeShowFiveDays={changeShowFiveDays}
-                    changeShowSevenDays={changeShowSevenDays}
-                />
-                <div className="block-cards">
-                    {forecastDays.map((dayData, index) => (
-                        <WeatherCard
-                            dayData={dayData}
-                            key={index}
-                            index={index}
-                            className={`cards`}
-                        />
-                    ))}
-                </div>
-                <div className="weather-info-block">
-                    <WeatherTable />
-                </div>
-            </main>
-        )
-    };
-
-    const forecastDays = data.forecast.forecastday.slice(0, changeNumberDays);
-
+    const forecastDays = data?.forecast?.forecastday.slice(0, changeNumberDays);
     return (
         <main className={theme === 'white' ? stateSeason : 'season-dark'}>
-            <ButtonChangeNumberDay
-                changeShowTreeDays={changeShowTreeDays}
-                changeShowFiveDays={changeShowFiveDays}
-                changeShowSevenDays={changeShowSevenDays}
-            />
-            <div className="block-cards">
-                {forecastDays.map((dayData, index) => (
-                    <WeatherCard
-                        dayData={dayData}
-                        key={index}
-                        index={index}
-                        onClick={() => changeFocus(index)}
-                        className={activeCard === index ? combinedClasses : `cards`}
+            {status === 'loading' && (
+                <div className='loading-data'>
+                    <span>Loading...</span>
+                    <img src="https://i.gifer.com/VAyR.gif" alt="Іконка загрузки" />
+                </div>
+            )}
+            {status === 'succeeded' && forecastDays && (
+                <>
+                    <ButtonChangeNumberDay
+                        changeShowTreeDays={changeShowTreeDays}
+                        changeShowFiveDays={changeShowFiveDays}
+                        changeShowSevenDays={changeShowSevenDays}
                     />
-                ))}
-            </div>
-            <div className="weather-info-block">
-                <WeatherTable />
+                    <div className="block-cards">
+                        {forecastDays.map((dayData, index) => (
+                            <WeatherCard
+                                dayData={dayData}
+                                key={index}
+                                index={index}
+                                onClick={() => changeFocus(index)}
+                                className={activeCard === index ? combinedClasses : `cards`}
+                            />
+                        ))}
+                    </div>
+                    <div className="weather-info-block">
+                        <WeatherTable />
+                    </div>
+                </>
+            )}
+            <div className='failed-data'>{status === 'failed' &&
+                <div>
+                    <p>Сталася помилка: {error}</p>
+                    <p>Будь ласка, перевірте правильність введеного місця для погоди і спробуйте ще раз.</p>
+                </div>}
             </div>
         </main>
     )

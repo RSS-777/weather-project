@@ -1,16 +1,10 @@
-import { useContext } from 'react';
-import { WeatherContext } from '../../context/WeatherContext';
 import { useSelector } from 'react-redux';
 import './WeatherTable.css';
 
 export const WeatherTable = () => {
-    const { data, indexCard } = useContext(WeatherContext);
+    const data = useSelector((state) => state.weather.data);
+    const indexCard = useSelector((state) => state.weather.indexCard)
     const theme = useSelector((state) => state.theme.value);
-
-    if (!data || !data.forecast || !data.forecast.forecastday || !data.forecast.forecastday[0].hour) {
-        return <p className='loading-table'>Loading...</p>;
-    };
-
     const dayData = data.forecast.forecastday[indexCard];
     const hours = ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00'];
 

@@ -1,7 +1,7 @@
 import './NotFoundPage.css'
 
 export const NotFoundPage = () => {
-    return(
+    return (
         <div className="container-not-pages">
             <h2>404 - Сторінка не знайдена</h2>
         </div>

@@ -6,7 +6,7 @@ import './ContactForm.css';
 
 export const ContactForm = () => {
     const [stateSeason, setStateSeason] = useState('');
-    const [isFormSubmitted, setIsFormSubmitted] = useState('')
+    const [isFormSubmitted, setIsFormSubmitted] = useState(false)
     const theme = useSelector((state) => state.theme.value);
 
     useEffect(() => {
@@ -15,9 +15,9 @@ export const ContactForm = () => {
     }, [])
 
     const FormSubmitted = () => {
-        setIsFormSubmitted('submited-form-message')
+        setIsFormSubmitted(true)
         setTimeout(() => {
-            setIsFormSubmitted('')
+            setIsFormSubmitted(false)
         }, 2000)
     }
 
@@ -79,7 +79,7 @@ export const ContactForm = () => {
                             <ErrorMessage name='message' component={'div'} />
                         </div>
                         <button type='submit' className='btn-form'>Відправити</button>
-                        <div className={isFormSubmitted}>
+                        <div className={isFormSubmitted ? 'submited-form-message' : null}>
                             {isFormSubmitted && <p>Ваша форма успішно відправлена</p>}
                         </div>
                     </Form>

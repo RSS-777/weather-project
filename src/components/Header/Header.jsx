@@ -1,15 +1,16 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { fetchWeatherData } from '../../store/weather/weatherSlice';
 import { changeTheme } from '../../store/theme/themeSlice';
-import { WeatherContext } from '../../context/WeatherContext';
 import { date } from '../../utils/date';
 import './Header.css';
 
 export const Header = () => {
-    const [inputValue, setInputValue] = useState('');
-    const { data, setNameCity } = useContext(WeatherContext);
-    const theme = useSelector((state) => state.theme.value);
     const dispatch = useDispatch();
+    const data = useSelector((state) => state.weather.data);
+    const theme = useSelector((state) => state.theme.value);
+    const [inputValue, setInputValue] = useState('');
+    const [cityToFetch, setCityToFetch] = useState('Kyiv')
     const [stateSeason, setStateSeason] = useState('');
     const nameCity = data?.location?.name || 'Місцезнаходження чи назва недоступні';
     const country = data?.location?.country || '';
@@ -19,9 +20,13 @@ export const Header = () => {
         setInputValue(event.target.value);
     };
 
+    useEffect(() => {
+        dispatch(fetchWeatherData(cityToFetch))
+    }, [cityToFetch])
+
     const handlerButtonClick = () => {
         if (inputValue !== '') {
-            setNameCity(inputValue)
+            setCityToFetch(inputValue)
         }
         setInputValue('')
     };

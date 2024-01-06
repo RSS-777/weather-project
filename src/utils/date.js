@@ -8,6 +8,6 @@ export const date = () => {
     if (months === 5 || months === 6 || months === 7) { season = 'summer' };
     if (months === 8 || months === 9 || months === 10) { season = 'autumn' };
 
-    return {season}
+    return { season }
 }
 
