@@ -8,7 +8,8 @@ export const Aside = () => {
     const [stateSeason, setStateSeason] = useState('');
 
     useEffect(() => {
-        setStateSeason(prevState => `${date.season}-aside`)
+        const currentSeason = date();
+        setStateSeason(`${currentSeason.season}-aside`)
     }, [])
 
     return (

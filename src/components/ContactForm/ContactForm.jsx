@@ -10,7 +10,8 @@ export const ContactForm = () => {
     const theme = useSelector((state) => state.theme.value);
 
     useEffect(() => {
-        setStateSeason(date.season)
+        const currentSeason = date();
+        setStateSeason(currentSeason.season)
     }, [])
 
     const FormSubmitted = () => {
@@ -47,7 +48,7 @@ export const ContactForm = () => {
     return (
         <Formik
             initialValues={{ name: '', email: '', message: '' }}
-            onSubmit={(values, formikBag) => {
+            onSubmit={(_, formikBag) => {
                 formikBag.resetForm()
                 FormSubmitted()
             }}

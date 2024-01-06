@@ -9,7 +9,8 @@ export const Footer = () => {
   const [stateSeason, setStateSeason] = useState('');
 
   useEffect(() => {
-    setStateSeason(date.season)
+    const currentSeason = date();
+    setStateSeason(currentSeason.season)
   }, [])
 
   return (

@@ -7,6 +7,18 @@ import { date } from '../../utils/date';
 import { useSelector } from 'react-redux';
 import './WeatherBlock.css';
 
+const placeholderDayData = {
+    date_epoch: null,
+    day: {
+        condition: {
+            icon: 'https://i.gifer.com/VAyR.gif'
+        },
+        avgtemp_c: null,
+        mintemp_c: null,
+        maxtemp_c: null
+    },
+};
+
 export const WeatherBlock = () => {
     const { data, setIndexCard } = useContext(WeatherContext);
     const theme = useSelector((state) => state.theme.value);
@@ -35,20 +47,9 @@ export const WeatherBlock = () => {
     };
 
     useEffect(() => {
-        setStateSeason(date.season)
+        const currentSeason = date();
+        setStateSeason(currentSeason.season)
     }, [])
-
-    const placeholderDayData = {
-        date_epoch: null,
-        day: {
-            condition: {
-                icon: 'https://i.gifer.com/VAyR.gif'
-            },
-            avgtemp_c: null,
-            mintemp_c: null,
-            maxtemp_c: null
-        },
-    };
 
     if (!data || !data.forecast || !data.forecast.forecastday) {
         const forecastDays = Array.from({ length: changeNumberDays }, () => ({ ...placeholderDayData }));

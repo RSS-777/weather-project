@@ -32,7 +32,8 @@ export const Header = () => {
     }
 
     useEffect(() => {
-        setStateSeason(date.season)
+        const currentSeason = date();
+        setStateSeason(currentSeason.season)
     }, [])
 
     return (

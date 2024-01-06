@@ -8,7 +8,8 @@ export const About = () => {
     const theme = useSelector((state) => state.theme.value);
 
     useEffect(() => {
-        setStateSeason(date.season)
+        const currentSeason = date();
+        setStateSeason(currentSeason.season)
     }, [])
 
     return (
