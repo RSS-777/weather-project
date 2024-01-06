@@ -68,7 +68,7 @@ main {
     font-size: 30px;
 }
 
-.failed-data div {
+.failed-data {
     background-color: rgba(2, 2, 2, 0.712);
     height: 100vh;
     margin: 40px;
@@ -107,7 +107,7 @@ main {
         margin: 15px;
     }
 
-    .failed-data div {
+    .failed-data {
         margin: 15px;
         padding: 20px;
         font-size: 15px;

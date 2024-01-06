@@ -74,12 +74,12 @@ export const WeatherBlock = () => {
                     </div>
                 </>
             )}
-            <div className='failed-data'>{status === 'failed' &&
-                <div>
+            {status === 'failed' &&
+                <div className='failed-data'>
                     <p>Сталася помилка: {error}</p>
                     <p>Будь ласка, перевірте правильність введеного місця для погоди і спробуйте ще раз.</p>
-                </div>}
-            </div>
+                </div>
+            }
         </main>
     )
 };
