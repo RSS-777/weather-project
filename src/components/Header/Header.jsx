@@ -12,7 +12,7 @@ export const Header = () => {
     const [inputValue, setInputValue] = useState('');
     const [cityToFetch, setCityToFetch] = useState('Kyiv')
     const [stateSeason, setStateSeason] = useState('');
-    const nameCity = data?.location?.name || 'Місцезнаходження чи назва недоступні';
+    const nameCity = data?.location?.name || 'Назва населеного пункту невідома!';
     const country = data?.location?.country || '';
     const region = data?.location?.region || '';
 
