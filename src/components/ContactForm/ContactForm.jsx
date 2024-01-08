@@ -14,7 +14,7 @@ export const ContactForm = () => {
         setStateSeason(currentSeason.season)
     }, [])
 
-    const FormSubmitted = () => {
+    const formSubmitted = () => {
         setIsFormSubmitted(true)
         setTimeout(() => {
             setIsFormSubmitted(false)
@@ -50,7 +50,7 @@ export const ContactForm = () => {
             initialValues={{ name: '', email: '', message: '' }}
             onSubmit={(_, formikBag) => {
                 formikBag.resetForm()
-                FormSubmitted()
+                formSubmitted()
             }}
             validate={validate}
         >
