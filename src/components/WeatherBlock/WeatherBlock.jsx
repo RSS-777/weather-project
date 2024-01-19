@@ -16,6 +16,7 @@ export const WeatherBlock = () => {
     const [stateSeason, setStateSeason] = useState('');
     const [changeNumberDays, setChangeNumberDays] = useState(3);
     const [activeCard, setActiveCard] = useState(0)
+    const [demoMessange, setDemoMessange] = useState('demo-hide')
     const combinedClasses = `cards active-block`;
 
     const changeFocus = (index) => {
@@ -31,11 +32,18 @@ export const WeatherBlock = () => {
     const changeShowFiveDays = () => {
         setChangeNumberDays(5)
         changeFocus(0)
+        demoVersion()
     };
 
     const changeShowSevenDays = () => {
         setChangeNumberDays(7)
+        demoVersion()
     };
+
+    const demoVersion = () => {
+        setDemoMessange('demo-show')
+        setTimeout(() => {setDemoMessange('demo-hide')}, 3000)
+    }
 
     useEffect(() => {
         const currentSeason = date();
@@ -52,7 +60,10 @@ export const WeatherBlock = () => {
                 </div>
             )}
             {status === 'succeeded' && forecastDays && (
-                <>
+                <>  
+                    <div className={demoMessange}>
+                        Sorry, this option is temporarily unavailable, the free API key has expired!
+                    </div>
                     <ButtonChangeNumberDay
                         changeShowTreeDays={changeShowTreeDays}
                         changeShowFiveDays={changeShowFiveDays}

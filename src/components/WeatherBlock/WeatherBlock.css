@@ -77,6 +77,32 @@ main {
     border-radius: 20px;
 }
 
+.demo-show {
+    position: absolute;
+    top:10px;
+    left: calc(50% - 150px) ;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    background-color: rgba(2, 2, 2, 0.712);
+    max-width: 300px;
+    text-align: center;
+    color: red;
+    transition: all 1s ease-in-out;
+}
+
+.demo-hide {
+    position: absolute;
+    top:-80px;
+    left: calc(50% - 150px) ;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    background-color: rgba(2, 2, 2, 0.712);
+    max-width: 300px;
+    text-align: center;
+    color: red;
+    transition: all 1s ease-in-out;
+}
+
 @media (max-width: 992px) {
     main {
         margin-right: 0;
