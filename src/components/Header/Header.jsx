@@ -56,7 +56,7 @@ export const Header = () => {
                         type="text"
                         className={theme === 'white' ? 'input-search-city' : 'input-search-city-dark'}
                         id="cityInput"
-                        placeholder='Введіть назву міста (Eng/Ru)'
+                        placeholder='Назва міста (eng / ru)'
                         value={inputValue}
                         onChange={handleInputChange}
                     />
