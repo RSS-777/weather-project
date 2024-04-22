@@ -77,30 +77,34 @@ main {
     border-radius: 20px;
 }
 
-.demo-show {
+.demo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    top:10px;
-    left: calc(50% - 150px) ;
-    padding: 10px;
-    border-radius: 0 0 10px 10px;
-    background-color: rgba(2, 2, 2, 0.712);
+    z-index: 999;
+    left: 48%;
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 10px;
+    background-color: rgba(2, 2, 2, 0.78);
+    border: 2px solid red;
+    box-shadow: 2px 2px 8px 1px white;
+    font-size: 16px;
+    height: 100px;
     max-width: 300px;
+    width: 100%;
+    margin: auto 10px;
     text-align: center;
-    color: red;
-    transition: all 1s ease-in-out;
+    color: rgb(255, 255, 255);
+    transition: all 2s ease-in-out;
+}
+
+.demo-show {
+    top: 50%;
 }
 
 .demo-hide {
-    position: absolute;
-    top:-80px;
-    left: calc(50% - 150px) ;
-    padding: 10px;
-    border-radius: 0 0 10px 10px;
-    background-color: rgba(2, 2, 2, 0.712);
-    max-width: 300px;
-    text-align: center;
-    color: red;
-    transition: all 1s ease-in-out;
+    top: -100%;
 }
 
 @media (max-width: 992px) {
