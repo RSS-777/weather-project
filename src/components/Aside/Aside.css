@@ -49,6 +49,7 @@ aside {
 [class^='advertising-block'] img {
     width: 100%;
     max-width: 100%;
+    max-height: 235px;
 }
 
 .advertising-block {
